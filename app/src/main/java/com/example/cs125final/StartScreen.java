@@ -13,6 +13,7 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.start_screen);
     }
     private void onClicker() {
-        Intent jumpPage = new Intent(StartScreen.this, StartScreen.class);
+        Intent jumpPage = new Intent(StartScreen.this, Batt.class);
+
     }
 }

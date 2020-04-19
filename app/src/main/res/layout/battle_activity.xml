@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/opponentSprite"
+        android:layout_width="262dp"
+        android:layout_height="264dp"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/opponentSprite2"
+        android:layout_width="262dp"
+        android:layout_height="264dp"
+        app:srcCompat="@android:drawable/btn_star"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <Button
+        android:id="@+id/codeAttack"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:hapticFeedbackEnabled="false"
+        android:text="Code"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="638dp" />
+
+    <Button
+        android:id="@+id/refactorAttack"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:text="Refactor"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="638dp" />
+
+    <Button
+        android:id="@+id/debugAttack"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:text="Debug"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="638dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

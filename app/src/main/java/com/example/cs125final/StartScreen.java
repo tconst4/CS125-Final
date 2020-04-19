@@ -9,11 +9,28 @@ import android.widget.Button;
 
 public class StartScreen extends AppCompatActivity {
 
+    private Button startButton;
+    private Button quitButton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.start_screen);
-        findViewById(R.id.start_button).setOnClickListener(
-                unused -> startActivity(new Intent(this, BattleActivity.class)));
+        Intent startGame = new Intent(StartScreen.this, BattleActivity.class);
+        startButton = (Button) findViewById(R.id.start_button);
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(startGame);
+                finish();
+            }
+        });
+        quitButton = (Button) findViewById(R.id.quit_button);
+        quitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".BattleActivity">
 
     <ImageView
-        android:id="@+id/opponentSprite2"
+        android:id="@+id/opponentSprite3"
         android:layout_width="193dp"
         android:layout_height="195dp"
         android:layout_marginStart="16dp"
@@ -17,7 +18,7 @@
         app:srcCompat="@android:drawable/btn_star" />
 
     <Button
-        android:id="@+id/refactorAttack"
+        android:id="@+id/refactorAttack2"
         android:layout_width="123dp"
         android:layout_height="70dp"
         android:layout_marginStart="148dp"
@@ -28,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/debugAttack"
+        android:id="@+id/debugAttack2"
         android:layout_width="123dp"
         android:layout_height="70dp"
         android:layout_marginStart="272dp"
@@ -39,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/codeAttack"
+        android:id="@+id/codeAttack2"
         android:layout_width="123dp"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
@@ -51,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/opponentSprite"
+        android:id="@+id/opponentSprite4"
         android:layout_width="215dp"
         android:layout_height="200dp"
         android:layout_marginStart="160dp"
@@ -60,5 +61,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/btn_star_big_on" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

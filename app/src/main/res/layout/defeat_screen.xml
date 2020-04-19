@@ -18,7 +18,7 @@
         android:id="@+id/retry_button"
         android:layout_width="281dp"
         android:layout_height="75dp"
-        android:text="Start Game"
+        android:text="Try Again?"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="566dp" />
 
@@ -26,7 +26,7 @@
         android:id="@+id/quit_button"
         android:layout_width="281dp"
         android:layout_height="75dp"
-        android:text="Quit"
+        android:text="Admit Defeat"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="640dp" />
 

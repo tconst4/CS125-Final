@@ -9,69 +9,83 @@
         android:id="@+id/opponentSprite"
         android:layout_width="262dp"
         android:layout_height="264dp"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ImageView
         android:id="@+id/opponentSprite2"
         android:layout_width="262dp"
         android:layout_height="264dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/btn_star"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="330dp" />
+        tools:layout_editor_absoluteY="329dp" />
 
     <Button
         android:id="@+id/codeAttack"
         android:layout_width="123dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="23dp"
         android:hapticFeedbackEnabled="false"
         android:text="Code"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="638dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="21dp" />
 
     <Button
         android:id="@+id/refactorAttack"
         android:layout_width="123dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="23dp"
         android:text="Refactor"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="638dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="146dp" />
 
     <Button
         android:id="@+id/debugAttack"
         android:layout_width="123dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="23dp"
         android:text="Debug"
-        tools:layout_editor_absoluteX="269dp"
-        tools:layout_editor_absoluteY="638dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="269dp" />
 
     <ImageView
         android:id="@+id/playerPip1"
         android:layout_width="60dp"
         android:layout_height="49dp"
-        android:visibility="invisible"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/playerPip2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/GreenCheck"
-        tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="280dp" />
 
     <ImageView
         android:id="@+id/playerPip2"
         android:layout_width="60dp"
         android:layout_height="49dp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/GreenCheck"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="280dp" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/tiebreakPip_enemy"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/playerPip1"
+        app:layout_constraintTop_toTopOf="@+id/playerPip1"
+        app:srcCompat="@drawable/GreenCheck" />
 
     <ImageView
         android:id="@+id/tiebreakPip_enemy"
         android:layout_width="60dp"
         android:layout_height="49dp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/RedCross"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="281dp" />
+        app:layout_constraintEnd_toStartOf="@+id/enemyPip2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/playerPip2"
+        app:layout_constraintTop_toTopOf="@+id/playerPip2"
+        app:srcCompat="@drawable/RedCross" />
 
     <ImageView
         android:id="@+id/tiebreakPip_player"
@@ -79,7 +93,7 @@
         android:layout_height="49dp"
         android:visibility="invisible"
         app:srcCompat="@drawable/GreenCheck"
-        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="280dp" />
 
     <ImageView
@@ -87,17 +101,21 @@
         android:layout_width="60dp"
         android:layout_height="49dp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/RedCross"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="281dp" />
+        app:layout_constraintEnd_toStartOf="@+id/enemyPip1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tiebreakPip_enemy"
+        app:layout_constraintTop_toTopOf="@+id/tiebreakPip_enemy"
+        app:srcCompat="@drawable/RedCross" />
 
     <ImageView
         android:id="@+id/enemyPip1"
         android:layout_width="60dp"
         android:layout_height="49dp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/RedCross"
-        tools:layout_editor_absoluteX="332dp"
-        tools:layout_editor_absoluteY="281dp" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/enemyPip2"
+        app:layout_constraintTop_toTopOf="@+id/enemyPip2"
+        app:srcCompat="@drawable/RedCross" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

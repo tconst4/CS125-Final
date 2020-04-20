@@ -15,7 +15,7 @@
         android:layout_marginTop="244dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:srcCompat="@drawable/fistclear" />
 
     <Button
         android:id="@+id/refactorAttack2"
@@ -60,5 +60,5 @@
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@drawable/ken2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

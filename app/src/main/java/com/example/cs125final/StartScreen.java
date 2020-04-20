@@ -16,7 +16,7 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.start_screen);
-        Intent startGame = new Intent(StartScreen.this, BattleActivity.class);
+        final Intent startGame = new Intent(StartScreen.this, BattleActivity.class);
         startButton = (Button) findViewById(R.id.start_button);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override

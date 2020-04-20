@@ -7,16 +7,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="408dp"
-        android:layout_height="736dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
+        android:layout_width="382dp"
+        android:layout_height="666dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/powerfist" />
 
     <Button
-        android:id="@+id/retry_button"
+        android:id="@+id/start_button"
         android:layout_width="281dp"
         android:layout_height="75dp"
         android:layout_marginStart="64dp"
@@ -39,13 +39,13 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="127dp"
-        android:layout_marginLeft="127dp"
-        android:layout_marginTop="299dp"
+        android:layout_width="239dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/trade_winds"
-        android:text="TextView"
+        android:text="Smackathon!"
         android:textColor="#8E0000"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"

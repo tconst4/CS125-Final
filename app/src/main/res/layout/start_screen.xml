@@ -6,6 +6,16 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="479dp"
+        android:layout_height="733dp"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hackground" />
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="382dp"
         android:layout_height="666dp"
@@ -37,18 +47,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="239dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="72dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="Smackathon!"
-        android:textColor="#8E0000"
-        android:textSize="36sp"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="370dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="42dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hacked" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="370dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="57dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hacked__1_" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".BattleActivity">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/battlegif"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp" />
+
     <ImageView
         android:id="@+id/opponentSprite3"
         android:layout_width="193dp"

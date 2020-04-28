@@ -22,6 +22,7 @@ public class BattleActivity extends AppCompatActivity {
         View enemyPip1 = findViewById(R.id.enemyPip1);
         View enemyPip2 = findViewById(R.id.enemyPip2);
         View enemyPip3 = findViewById(R.id.enemyPip3);
+
         codeButton = (Button) findViewById(R.id.codeAttack2);
         codeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,21 +31,27 @@ public class BattleActivity extends AppCompatActivity {
                 teamPip1.setVisibility(View.VISIBLE);
             }
         });
+
         refactorButton = (Button) findViewById(R.id.refactorAttack2);
-        codeButton.setOnClickListener(new View.OnClickListener() {
+        refactorButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v1) {
                 //View redOrb = findViewById(R.id.enemyPip1);
                 enemyPip1.setVisibility(View.VISIBLE);
             }
         });
+
         debugButton = (Button) findViewById(R.id.debugAttack2);
-        codeButton.setOnClickListener(new View.OnClickListener() {
+        debugButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v2) {
                 //View greenOrb = findViewById(R.id.teamPip1);
                 teamPip1.setVisibility(View.INVISIBLE);
+                teamPip2.setVisibility(View.INVISIBLE);
+                teamPip3.setVisibility(View.INVISIBLE);
                 enemyPip1.setVisibility(View.INVISIBLE);
+                enemyPip2.setVisibility(View.INVISIBLE);
+                enemyPip3.setVisibility(View.INVISIBLE);
             }
         });
     }

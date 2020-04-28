@@ -1,26 +1,58 @@
 package com.example.cs125final;
 
-import java.util.Random;
 
+/**
+ *This class manages the player and enemy scores for each individual battle. This way we can just
+ * instantiate a new instance of the battle class for each round, rather than have functions to
+ * reset the score values.
+ */
 public class battle {
-    private int  move;
-    private static int battleCounter = 0;
+    private static int round = -1;
+    private int playerScore = 0;
+    private int enemyScore = 0;
 
-    public void setMove() {
-        Random rand = new Random();
-        int newInt = rand.nextInt(3);
-        move = newInt;
+    /**
+     * each instance of battle should increase the round count by 1, starting at 0 for index
+     * purposes in the moveList array.
+     */
+    battle() {
+        round++;
     }
 
-    public int getMove() {
-        return move;
+    /**
+     * Gets the current round.
+     * @return an int representing the current round.
+     */
+    public int getRound() {
+        return round;
+    }
+    /**
+     * Called when the player input is correct to defeat the current move.
+     */
+    public void playerSuccess() {
+        playerScore++;
     }
 
-    public int getEnemy() {
-        return (battleCounter);
+    /**
+     * Called when the player input was incorrect to defeat the current move.
+     */
+    public void playerFail() {
+        enemyScore++;
     }
 
-    public void advanceRound() {
-        battleCounter++;
+    /**
+     * Gets the player score, if ever = 3 the player wins the round.
+     * @return an int representing the player's current score.
+     */
+    public int getPlayerScore() {
+        return playerScore;
+    }
+
+    /**
+     * Gets the enemy score, if ever = 3 the player loses the game and has to start over.
+     * @return an int representing the enemy's current score.
+     */
+    public int getEnemyScore() {
+        return enemyScore;
     }
 }

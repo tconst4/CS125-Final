@@ -4,30 +4,38 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
 
 
 public class BattleActivity extends AppCompatActivity {
+    private Game currentGame;
+    private MoveList moves;
     private Button codeButton;
     private Button refactorButton;
     private Button debugButton;
     private MediaPlayer music;
+    private ImageView enemyAvatar;
+    private View teamPip1 = findViewById(R.id.teamPip1);
+    private View teamPip2 = findViewById(R.id.teamPip2);
+    private View teamPip3 = findViewById(R.id.teamPip3);
+    private View enemyPip1 = findViewById(R.id.enemyPip1);
+    private View enemyPip2 = findViewById(R.id.enemyPip2);
+    private View enemyPip3 = findViewById(R.id.enemyPip3);
+    private MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
+    private MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle);
-        View teamPip1 = findViewById(R.id.teamPip1);
-        View teamPip2 = findViewById(R.id.teamPip2);
-        View teamPip3 = findViewById(R.id.teamPip3);
-        View enemyPip1 = findViewById(R.id.enemyPip1);
-        View enemyPip2 = findViewById(R.id.enemyPip2);
-        View enemyPip3 = findViewById(R.id.enemyPip3);
-
-        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
-        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+        currentGame = new Game();
+        moves = new MoveList();
+        currentGame.setTell();
+        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                currentGame.getTell()));
 
         startMusic();
 
@@ -35,9 +43,7 @@ public class BattleActivity extends AppCompatActivity {
         codeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //View greenOrb = findViewById(R.id.teamPip1);
-                teamPip1.setVisibility(View.VISIBLE);
-                hit.start();
+                inputHandler(Constant.CODE_INPUT);
             }
         });
 
@@ -45,9 +51,7 @@ public class BattleActivity extends AppCompatActivity {
         refactorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
-                //View redOrb = findViewById(R.id.enemyPip1);
-                enemyPip1.setVisibility(View.VISIBLE);
-                miss.start();
+                inputHandler(Constant.REFACTOR_INPUT);
             }
         });
 
@@ -55,20 +59,47 @@ public class BattleActivity extends AppCompatActivity {
         debugButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
-                //View greenOrb = findViewById(R.id.teamPip1);
-                teamPip1.setVisibility(View.INVISIBLE);
-                teamPip2.setVisibility(View.INVISIBLE);
-                teamPip3.setVisibility(View.INVISIBLE);
-                enemyPip1.setVisibility(View.INVISIBLE);
-                enemyPip2.setVisibility(View.INVISIBLE);
-                enemyPip3.setVisibility(View.INVISIBLE);
-                if (music.isPlaying()) {
-                    music.pause();
-                } else {
-                    startMusic();
-                }
+                inputHandler(Constant.DEBUG_INPUT);
             }
         });
+    }
+
+    /**
+     * Handles all inputs from the 3 player buttons.
+     * @param playerInput int, represents the move being input by the player.
+     */
+    public void inputHandler(int playerInput) {
+        if (currentGame.checkPlayerInput(playerInput)) {
+            hit.start();
+        } else {
+            miss.start();
+        };
+        playerPipControl();
+        enemyPipControl();
+        currentGame.setTell();
+        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                currentGame.getTell()));
+
+    }
+
+    private void playerPipControl() {
+        if (currentGame.currentPlayerScore() == Constant.FIRST_POINT) {
+            teamPip1.setVisibility(View.VISIBLE);
+        } else if (currentGame.currentPlayerScore() == Constant.SECOND_POINT) {
+            teamPip2.setVisibility(View.VISIBLE);
+        } else if (currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
+            teamPip3.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void enemyPipControl() {
+        if (currentGame.currentEnemyScore() == Constant.FIRST_POINT) {
+            enemyPip1.setVisibility(View.VISIBLE);
+        } else if (currentGame.currentEnemyScore() == Constant.SECOND_POINT) {
+            enemyPip2.setVisibility(View.VISIBLE);
+        } else if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
+            enemyPip3.setVisibility(View.VISIBLE);
+        }
     }
 
     /**

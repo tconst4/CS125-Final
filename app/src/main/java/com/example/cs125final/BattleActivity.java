@@ -39,7 +39,6 @@ public class BattleActivity extends AppCompatActivity {
                 teamPip1.setVisibility(View.VISIBLE);
                 hit.start();
             }
-
         });
 
         refactorButton = (Button) findViewById(R.id.refactorAttack2);
@@ -48,7 +47,7 @@ public class BattleActivity extends AppCompatActivity {
             public void onClick(View v1) {
                 //View redOrb = findViewById(R.id.enemyPip1);
                 enemyPip1.setVisibility(View.VISIBLE);
-                startMusic();
+                miss.start();
             }
         });
 
@@ -63,8 +62,11 @@ public class BattleActivity extends AppCompatActivity {
                 enemyPip1.setVisibility(View.INVISIBLE);
                 enemyPip2.setVisibility(View.INVISIBLE);
                 enemyPip3.setVisibility(View.INVISIBLE);
-
-                stopMusic();
+                if (music.isPlaying()) {
+                    music.pause();
+                } else {
+                    startMusic();
+                }
             }
         });
     }
@@ -92,6 +94,7 @@ public class BattleActivity extends AppCompatActivity {
      */
     private void stopPlaying() {
         if (music != null) {
+            music.stop();
             music.release();
             music = null;
         }

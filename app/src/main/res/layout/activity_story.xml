@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StoryActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="1033dp"
+        android:layout_height="757dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hackground" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="367dp"
+        android:layout_height="447dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wood" />
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="316dp"
+        android:layout_height="409dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="34dp"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:text="You did it! After months of training, you were finally make it into the University of Illinois to pursue your lifelong goal of becoming a head Course Assistant of the prestigious CS 125 class! To prove your worth, you must now undergo a gauntlet of trials to test if you are truly ready to assist the next year's students in the Smackathon!!"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="154dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="428dp"
+        android:background="@drawable/startbuttonon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

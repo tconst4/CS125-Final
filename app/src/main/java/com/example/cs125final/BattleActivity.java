@@ -26,6 +26,8 @@ public class BattleActivity extends AppCompatActivity {
         final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
         final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
         final MediaPlayer music = MediaPlayer.create(this, R.raw.battle);
+        music.setLooping(true);
+        music.start();
 
         codeButton = (Button) findViewById(R.id.codeAttack2);
         codeButton.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +65,7 @@ public class BattleActivity extends AppCompatActivity {
                 enemyPip2.setVisibility(View.INVISIBLE);
                 enemyPip3.setVisibility(View.INVISIBLE);
 
-                music.start();
+                music.stop();
             }
         });
     }

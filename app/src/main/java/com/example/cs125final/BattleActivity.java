@@ -7,11 +7,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.IOException;
+
 
 public class BattleActivity extends AppCompatActivity {
     private Button codeButton;
     private Button refactorButton;
     private Button debugButton;
+    private MediaPlayer music;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +28,8 @@ public class BattleActivity extends AppCompatActivity {
 
         final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
         final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
-        final MediaPlayer music = MediaPlayer.create(this, R.raw.battle);
-        music.setLooping(true);
-        music.start();
+
+        startMusic();
 
         codeButton = (Button) findViewById(R.id.codeAttack2);
         codeButton.setOnClickListener(new View.OnClickListener() {
@@ -46,11 +48,8 @@ public class BattleActivity extends AppCompatActivity {
             public void onClick(View v1) {
                 //View redOrb = findViewById(R.id.enemyPip1);
                 enemyPip1.setVisibility(View.VISIBLE);
-                miss.start();
+                startMusic();
             }
-
-
-
         });
 
         debugButton = (Button) findViewById(R.id.debugAttack2);
@@ -65,8 +64,45 @@ public class BattleActivity extends AppCompatActivity {
                 enemyPip2.setVisibility(View.INVISIBLE);
                 enemyPip3.setVisibility(View.INVISIBLE);
 
-                music.stop();
+                stopMusic();
             }
         });
+    }
+
+    /**
+     * Instantiates a music player instance if one does not exist, begins playback.
+     */
+    public void startMusic() {
+        if (music == null) {
+            music = MediaPlayer.create(this, R.raw.battle);
+        }
+        music.start();
+    }
+
+    /**
+     * calls a method to stop and release the music player resources.
+     */
+    public void stopMusic() {
+        stopPlaying();
+    }
+
+    /**
+     * Checks if player exists and releases it, also sets music = null so we can create a new one
+     * next time the startMusic function is called.
+     */
+    private void stopPlaying() {
+        if (music != null) {
+            music.release();
+            music = null;
+        }
+    }
+
+    /**
+     * Override the onStop method to ensure the player is released when the app closes.
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlaying();
     }
 }

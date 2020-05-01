@@ -6,14 +6,14 @@ import java.util.Random;
  * Whenever a player starts, wins, or loses a game BattleActivity will need to set its internal
  * game object to a new instance of "game". This way we start with a guaranteed fresh game state.
  */
-public class game {
-    private battle currentBattle;
+public class Game {
+    private Battle currentBattle;
 
     /**
      * When a new game is created there should be a new (first) battle created to go along with it.
      */
-    game() {
-        currentBattle = new battle();
+    Game() {
+        currentBattle = new Battle();
     }
     /**
      * This is the move the opponent is currently using. Get and Set methods are provided below.
@@ -32,7 +32,7 @@ public class game {
      * are reset to 0 and we don't need to add functions to handle that.
      */
     public void newBattle() {
-        currentBattle = new battle();
+        currentBattle = new Battle();
     }
 
     /**

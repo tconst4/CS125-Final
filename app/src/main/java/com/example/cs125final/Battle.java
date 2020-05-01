@@ -6,7 +6,7 @@ package com.example.cs125final;
  * instantiate a new instance of the battle class for each round, rather than have functions to
  * reset the score values.
  */
-public class battle {
+public class Battle {
     private static int round = -1;
     private int playerScore = 0;
     private int enemyScore = 0;
@@ -15,7 +15,7 @@ public class battle {
      * each instance of battle should increase the round count by 1, starting at 0 for index
      * purposes in the moveList array.
      */
-    battle() {
+    Battle() {
         round++;
     }
 

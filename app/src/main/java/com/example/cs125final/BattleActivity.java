@@ -17,20 +17,30 @@ public class BattleActivity extends AppCompatActivity {
     private Button refactorButton;
     private Button debugButton;
     private MediaPlayer music;
+    private MediaPlayer hit;
+    private MediaPlayer miss;
     private ImageView enemyAvatar;
-    private View teamPip1 = findViewById(R.id.teamPip1);
-    private View teamPip2 = findViewById(R.id.teamPip2);
-    private View teamPip3 = findViewById(R.id.teamPip3);
-    private View enemyPip1 = findViewById(R.id.enemyPip1);
-    private View enemyPip2 = findViewById(R.id.enemyPip2);
-    private View enemyPip3 = findViewById(R.id.enemyPip3);
-    private MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
-    private MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+    private View teamPip1;
+    private View teamPip2;
+    private View teamPip3;
+    private View enemyPip1;
+    private View enemyPip2;
+    private View enemyPip3;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle);
+        teamPip1 = findViewById(R.id.teamPip1);
+        teamPip2 = findViewById(R.id.teamPip2);
+        teamPip3 = findViewById(R.id.teamPip3);
+        enemyPip1 = findViewById(R.id.enemyPip1);
+        enemyPip2 = findViewById(R.id.enemyPip2);
+        enemyPip3 = findViewById(R.id.enemyPip3);
+        enemyAvatar = findViewById(R.id.opponentSprite4);
+//        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
+//        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+
         currentGame = new Game();
         moves = new MoveList();
         currentGame.setTell();
@@ -69,17 +79,24 @@ public class BattleActivity extends AppCompatActivity {
      * @param playerInput int, represents the move being input by the player.
      */
     public void inputHandler(int playerInput) {
-        if (currentGame.checkPlayerInput(playerInput)) {
-            hit.start();
-        } else {
-            miss.start();
-        };
-        playerPipControl();
-        enemyPipControl();
+//        if (currentGame.checkPlayerInput(playerInput)) {
+//            hit = MediaPlayer.create(this, R.raw.right);
+//            hit.start();
+//            hit.stop();
+//            hit.release();
+//            hit = null;
+//        } else {
+//            miss = MediaPlayer.create(this, R.raw.wrong);
+//            miss.start();
+//            miss.stop();
+//            miss.release();
+//            miss = null;
+//        };
+//        playerPipControl();
+//        enemyPipControl();
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                 currentGame.getTell()));
-
     }
 
     private void playerPipControl() {
@@ -108,6 +125,7 @@ public class BattleActivity extends AppCompatActivity {
     public void startMusic() {
         if (music == null) {
             music = MediaPlayer.create(this, R.raw.battle);
+            music.setLooping(true);
             //music = MediaPlayer.create(this, R.raw.boss);
         }
         music.start();

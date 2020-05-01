@@ -7,6 +7,7 @@ import java.util.Random;
  * game object to a new instance of "game". This way we start with a guaranteed fresh game state.
  */
 public class Game {
+    private static int lastTell = -1;
     private static int round = 0;
     private Battle currentBattle;
     /**
@@ -49,6 +50,10 @@ public class Game {
     public void setTell() {
         Random rand = new Random();
         int newInt = rand.nextInt(Constant.TELL_LIMIT);
+        while (newInt == lastTell) {
+            newInt = rand.nextInt(Constant.TELL_LIMIT);
+        }
+        lastTell = newInt;
         tell = newInt;
     }
 

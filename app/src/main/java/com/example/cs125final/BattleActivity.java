@@ -1,5 +1,6 @@
 package com.example.cs125final;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,6 @@ public class BattleActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle);
-
         View teamPip1 = findViewById(R.id.teamPip1);
         View teamPip2 = findViewById(R.id.teamPip2);
         View teamPip3 = findViewById(R.id.teamPip3);
@@ -23,13 +23,19 @@ public class BattleActivity extends AppCompatActivity {
         View enemyPip2 = findViewById(R.id.enemyPip2);
         View enemyPip3 = findViewById(R.id.enemyPip3);
 
+        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
+        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+        final MediaPlayer music = MediaPlayer.create(this, R.raw.battle);
+
         codeButton = (Button) findViewById(R.id.codeAttack2);
         codeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //View greenOrb = findViewById(R.id.teamPip1);
                 teamPip1.setVisibility(View.VISIBLE);
+                hit.start();
             }
+
         });
 
         refactorButton = (Button) findViewById(R.id.refactorAttack2);
@@ -38,7 +44,11 @@ public class BattleActivity extends AppCompatActivity {
             public void onClick(View v1) {
                 //View redOrb = findViewById(R.id.enemyPip1);
                 enemyPip1.setVisibility(View.VISIBLE);
+                miss.start();
             }
+
+
+
         });
 
         debugButton = (Button) findViewById(R.id.debugAttack2);
@@ -52,6 +62,8 @@ public class BattleActivity extends AppCompatActivity {
                 enemyPip1.setVisibility(View.INVISIBLE);
                 enemyPip2.setVisibility(View.INVISIBLE);
                 enemyPip3.setVisibility(View.INVISIBLE);
+
+                music.start();
             }
         });
     }

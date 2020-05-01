@@ -77,6 +77,7 @@ public class BattleActivity extends AppCompatActivity {
     public void startMusic() {
         if (music == null) {
             music = MediaPlayer.create(this, R.raw.battle);
+            //music = MediaPlayer.create(this, R.raw.boss);
         }
         music.start();
     }

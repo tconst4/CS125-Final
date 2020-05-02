@@ -18,6 +18,8 @@ public class BattleActivity extends AppCompatActivity {
     protected Button refactorButton;
     protected Button debugButton;
     protected Button advanceButton;
+    protected Button menuButton;
+    protected Button startOverButton;
     protected MediaPlayer music;
     protected MediaPlayer hit;
     protected MediaPlayer miss;
@@ -28,6 +30,8 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip1;
     protected View enemyPip2;
     protected View enemyPip3;
+    protected ImageView victory;
+    protected ImageView defeat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,10 @@ public class BattleActivity extends AppCompatActivity {
         enemyPip2 = findViewById(R.id.enemyPip2);
         enemyPip3 = findViewById(R.id.enemyPip3);
         enemyAvatar = findViewById(R.id.opponentSprite4);
+        startOverButton = findViewById(R.id.startOverButton);
+        menuButton = findViewById(R.id.menuButton);
+        victory = findViewById(R.id.victory);
+        defeat = findViewById(R.id.defeat);
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
         final Intent fightTransition = new Intent(BattleActivity.this,
@@ -85,6 +93,20 @@ public class BattleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                    startActivity(fightTransition);
+            }
+        });
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toMenu = new Intent(BattleActivity.this, StartScreen.class);
+                startActivity(toMenu);
+            }
+        });
+        startOverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toStart = new Intent(BattleActivity.this, StartScreen.class);
+                startActivity(toStart);
             }
         });
     }
@@ -168,6 +190,7 @@ public class BattleActivity extends AppCompatActivity {
             refactorButton.setVisibility(View.INVISIBLE);
             debugButton.setVisibility(View.INVISIBLE);
             advanceButton.setVisibility(View.VISIBLE);
+            victory.setVisibility(View.VISIBLE);
             currentGame.updateTotalScore();
             currentGame.newBattle();
         }
@@ -176,6 +199,12 @@ public class BattleActivity extends AppCompatActivity {
             /*Play defeat noise*/
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     Constant.VICTORY_POSE));
+            codeButton.setVisibility(View.INVISIBLE);
+            refactorButton.setVisibility(View.INVISIBLE);
+            debugButton.setVisibility(View.INVISIBLE);
+            defeat.setVisibility(View.VISIBLE);
+            startOverButton.setVisibility(View.VISIBLE);
+            menuButton.setVisibility(View.VISIBLE);
         }
     }
 

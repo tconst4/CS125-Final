@@ -26,7 +26,7 @@ public class MoveList {
         moves[1][0] = R.drawable.ken1;
         moves[1][1] = R.drawable.ryu2;
         moves[1][2] = R.drawable.powerfist;
-        moves[1][3] = 0;
+        moves[1][3] = R.drawable.powerfist;
         moves[1][4] = 0;
         moves[2][0] = 0;
         moves[2][1] = 0;

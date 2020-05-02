@@ -165,4 +165,17 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
 
+    <ImageView
+        android:id="@+id/victory"
+        android:layout_width="341dp"
+        android:layout_height="594dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="200dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/victory" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

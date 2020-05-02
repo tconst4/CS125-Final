@@ -61,7 +61,7 @@ public class BattleActivity extends AppCompatActivity {
                 currentGame.getTell()));
 
         startMusic();
-        fightTransition.putExtra("round", currentGame.getCurrentRound());
+        fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
         System.out.println(currentGame.getCurrentRound());
 
         codeButton = findViewById(R.id.codeAttack);

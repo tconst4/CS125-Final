@@ -1,5 +1,6 @@
 package com.example.cs125final;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class BattleActivity extends AppCompatActivity {
     private Button codeButton;
     private Button refactorButton;
     private Button debugButton;
+    private Button advanceButton;
     private MediaPlayer music;
     private MediaPlayer hit;
     private MediaPlayer miss;
@@ -40,6 +42,8 @@ public class BattleActivity extends AppCompatActivity {
         enemyAvatar = findViewById(R.id.opponentSprite4);
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+        final Intent fightTransition = new Intent(BattleActivity.this,
+                TransitionActivity.class);
 
         currentGame = new Game();
         moves = new MoveList();
@@ -48,6 +52,7 @@ public class BattleActivity extends AppCompatActivity {
                 currentGame.getTell()));
 
         startMusic();
+        System.out.println(currentGame.getCurrentRound());
 
         codeButton = findViewById(R.id.codeAttack2);
         codeButton.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +77,22 @@ public class BattleActivity extends AppCompatActivity {
                 inputHandler(Constant.DEBUG_INPUT);
             }
         });
+
+        advanceButton = findViewById(R.id.advanceButton);
+        advanceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                   startActivity(fightTransition);
+            }
+        });
     }
 
+    public void onResume() {
+        super.onResume();
+        System.out.println(currentGame.getCurrentRound());
+        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                currentGame.getTell()));
+    }
     /**
      * Handles all inputs from the 3 player buttons.
      * @param playerInput int, represents the move being input by the player.
@@ -114,7 +133,11 @@ public class BattleActivity extends AppCompatActivity {
         }
     }
 
-    private void pipReset() {
+    private void boardReset() {
+        advanceButton.setVisibility(View.GONE);
+        codeButton.setVisibility(View.VISIBLE);
+        refactorButton.setVisibility(View.VISIBLE);
+        debugButton.setVisibility(View.VISIBLE);
         teamPip1.setVisibility(View.INVISIBLE);
         teamPip2.setVisibility(View.INVISIBLE);
         teamPip3.setVisibility(View.INVISIBLE);
@@ -132,13 +155,17 @@ public class BattleActivity extends AppCompatActivity {
             return -1;
         }
     }
-    
+
     private void roundOver() {
         if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
             stopMusic();
             /* play fanfare*/
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     Constant.DEFEAT_POSE));
+            codeButton.setVisibility(View.INVISIBLE);
+            refactorButton.setVisibility(View.INVISIBLE);
+            debugButton.setVisibility(View.INVISIBLE);
+            advanceButton.setVisibility(View.VISIBLE);
             currentGame.updateTotalScore();
             currentGame.newBattle();
         }

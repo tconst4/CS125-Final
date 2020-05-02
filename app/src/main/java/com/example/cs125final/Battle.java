@@ -2,30 +2,14 @@ package com.example.cs125final;
 
 
 /**
- *This class manages the player and enemy scores for each individual battle. This way we can just
- * instantiate a new instance of the battle class for each round, rather than have functions to
+ * Manages player and enemy scores for each individual battle. This way we can instantiate a new
+ * instance of the battle class for each round, rather than have functions to
  * reset the score values.
  */
-public class battle {
-    private static int round = -1;
+public class Battle {
     private int playerScore = 0;
     private int enemyScore = 0;
 
-    /**
-     * each instance of battle should increase the round count by 1, starting at 0 for index
-     * purposes in the moveList array.
-     */
-    battle() {
-        round++;
-    }
-
-    /**
-     * Gets the current round.
-     * @return an int representing the current round.
-     */
-    public int getRound() {
-        return round;
-    }
     /**
      * Called when the player input is correct to defeat the current move.
      */

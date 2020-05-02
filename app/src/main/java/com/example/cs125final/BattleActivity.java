@@ -84,9 +84,14 @@ public class BattleActivity extends AppCompatActivity {
         } else {
             enemyPipControl();
         };
-        currentGame.setTell();
-        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
-                currentGame.getTell()));
+        if (scoreCheck() < 0) {
+            currentGame.setTell();
+            enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                    currentGame.getTell()));
+        } else {
+            roundOver();
+        }
+
     }
 
     private void playerPipControl() {
@@ -109,7 +114,26 @@ public class BattleActivity extends AppCompatActivity {
         }
     }
 
-    private void scoreKeeper() {
+    private void pipReset() {
+        teamPip1.setVisibility(View.INVISIBLE);
+        teamPip2.setVisibility(View.INVISIBLE);
+        teamPip3.setVisibility(View.INVISIBLE);
+        enemyPip1.setVisibility(View.INVISIBLE);
+        enemyPip2.setVisibility(View.INVISIBLE);
+        enemyPip3.setVisibility(View.INVISIBLE);
+    }
+
+    private int scoreCheck() {
+        if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
+            return 1;
+        } else if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+    
+    private void roundOver() {
         if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
             stopMusic();
             /* play fanfare*/
@@ -117,6 +141,12 @@ public class BattleActivity extends AppCompatActivity {
                     Constant.DEFEAT_POSE));
             currentGame.updateTotalScore();
             currentGame.newBattle();
+        }
+        if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
+            stopMusic();
+            /*Play defeat noise*/
+            enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                    Constant.VICTORY_POSE));
         }
     }
 

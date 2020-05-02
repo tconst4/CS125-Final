@@ -44,8 +44,7 @@ public class TransitionActivity extends AppCompatActivity {
         }
 
         final Intent battleActivity = new Intent(TransitionActivity.this,
-                Battle.class);
-        battleActivity.putExtra("round", currentRound);
+                BattleActivity.class);
         Button nextFight = findViewById(R.id.fightButton);
         nextFight.setOnClickListener(new View.OnClickListener() {
             @Override

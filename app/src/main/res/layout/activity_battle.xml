@@ -191,7 +191,7 @@
         tools:visibility="invisible" />
 
     <Button
-        android:id="@+id/menuButton1"
+        android:id="@+id/menuButton"
         android:layout_width="169dp"
         android:layout_height="90dp"
         android:layout_marginStart="218dp"

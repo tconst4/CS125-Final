@@ -53,9 +53,10 @@ public class BattleActivity extends AppCompatActivity {
                 currentGame.getTell()));
 
         startMusic();
+        fightTransition.putExtra("round", currentGame.getCurrentRound());
         System.out.println(currentGame.getCurrentRound());
 
-        codeButton = findViewById(R.id.codeAttack2);
+        codeButton = findViewById(R.id.codeAttack);
         codeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +64,7 @@ public class BattleActivity extends AppCompatActivity {
             }
         });
 
-        refactorButton = findViewById(R.id.refactorAttack2);
+        refactorButton = findViewById(R.id.refactorAttack);
         refactorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
@@ -71,7 +72,7 @@ public class BattleActivity extends AppCompatActivity {
             }
         });
 
-        debugButton = findViewById(R.id.debugAttack2);
+        debugButton = findViewById(R.id.debugAttack);
         debugButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {

@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".GeoffRound"></activity>
-        <activity android:name=".Round5Ben" />
-        <activity android:name=".Round4Lou" />
-        <activity android:name=".Round3David" />
-        <activity android:name=".Round2" />
-        <activity android:name=".Round1Martin" />
         <activity android:name=".StoryActivity" />
         <activity android:name=".TransitionActivity" />
         <activity android:name=".BattleActivity" />

@@ -14,6 +14,7 @@ public class StoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
+        startGame = findViewById(R.id.button);
         Intent toGame = new Intent(StoryActivity.this, TransitionActivity.class);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override

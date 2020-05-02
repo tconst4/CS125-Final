@@ -6,40 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".BattleActivity">
 
-    <Button
-        android:id="@+id/startOverButton"
-        android:layout_width="191dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="552dp"
-        android:text="Start Over?"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/menuButton"
-        android:layout_width="169dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="218dp"
-        android:layout_marginLeft="218dp"
-        android:layout_marginTop="549dp"
-        android:text="Menu"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/defeat"
-        android:layout_width="410dp"
-        android:layout_height="382dp"
-        android:layout_marginTop="284dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/defeat" />
-
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,41 +13,6 @@
         android:src="@drawable/battlegif"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-16dp" />
-
-    <Button
-        android:id="@+id/refactorAttack2"
-        android:layout_width="123dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="560dp"
-        android:text="Refactor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/debugAttack2"
-        android:layout_width="123dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="560dp"
-        android:text="Debug"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/codeAttack2"
-        android:layout_width="123dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="560dp"
-        android:hapticFeedbackEnabled="false"
-        android:text="Code"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/opponentSprite4"
@@ -93,6 +24,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ken1" />
+
+    <ImageView
+        android:id="@+id/victory"
+        android:layout_width="341dp"
+        android:layout_height="594dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="200dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/victory" />
+
+    <ImageView
+        android:id="@+id/defeat"
+        android:layout_width="410dp"
+        android:layout_height="382dp"
+        android:layout_marginTop="284dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/defeat" />
+
+    <Button
+        android:id="@+id/refactorAttack"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="560dp"
+        android:text="Refactor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/teamPip1"
+        android:layout_width="92dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="276dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/glowygreen"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/enemyPip1"
+        android:layout_width="66dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="284dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/glowyball"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/teamPip2"
@@ -121,19 +112,6 @@
         tools:visibility="visible" />
 
     <ImageView
-        android:id="@+id/enemyPip3"
-        android:layout_width="61dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="284dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/glowyball"
-        tools:visibility="visible" />
-
-    <ImageView
         android:id="@+id/teamPip3"
         android:layout_width="92dp"
         android:layout_height="88dp"
@@ -147,30 +125,53 @@
         tools:visibility="visible" />
 
     <ImageView
-        android:id="@+id/teamPip1"
-        android:layout_width="92dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="276dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/glowygreen"
-        tools:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/enemyPip1"
-        android:layout_width="66dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginLeft="328dp"
+        android:id="@+id/enemyPip3"
+        android:layout_width="61dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginLeft="180dp"
         android:layout_marginTop="284dp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/glowyball"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/startOverButton"
+        android:layout_width="191dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="552dp"
+        android:text="Start Over?"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/codeAttack"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="560dp"
+        android:hapticFeedbackEnabled="false"
+        android:text="Code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/debugAttack"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="560dp"
+        android:text="Debug"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/advanceButton"
@@ -189,17 +190,16 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="invisible" />
 
-    <ImageView
-        android:id="@+id/victory"
-        android:layout_width="341dp"
-        android:layout_height="594dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="200dp"
-        android:scaleType="centerCrop"
-        android:visibility="invisible"
+    <Button
+        android:id="@+id/menuButton1"
+        android:layout_width="169dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="218dp"
+        android:layout_marginLeft="218dp"
+        android:layout_marginTop="549dp"
+        android:text="Menu"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/victory" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

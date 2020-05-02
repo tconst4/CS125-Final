@@ -80,7 +80,7 @@ public class Battle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         currentRound = getIntent().getIntExtra("round", 1);
-        switch (currentRound) {
+        /** switch (currentRound) {
             case 1:
                 setContentView(R.layout.activity_round1_martin);
                 teamPip1 = findViewById(R.id.teamPip11);
@@ -183,7 +183,7 @@ public class Battle extends AppCompatActivity {
                 break;
             default:
                 break;
-        }
+        }*/
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
          Intent fightTransition = new Intent(Battle.this,

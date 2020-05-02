@@ -26,6 +26,16 @@
         app:srcCompat="@drawable/ken1" />
 
     <ImageView
+        android:id="@+id/defeat"
+        android:layout_width="410dp"
+        android:layout_height="382dp"
+        android:layout_marginTop="284dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/defeat" />
+
+    <ImageView
         android:id="@+id/victory"
         android:layout_width="341dp"
         android:layout_height="594dp"
@@ -37,16 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/victory" />
-
-    <ImageView
-        android:id="@+id/defeat"
-        android:layout_width="410dp"
-        android:layout_height="382dp"
-        android:layout_marginTop="284dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/defeat" />
 
     <Button
         android:id="@+id/refactorAttack"

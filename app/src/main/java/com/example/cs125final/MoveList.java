@@ -24,9 +24,9 @@ public class MoveList {
         moves[0][3] = R.drawable.louvictory;
         moves[0][4] = R.drawable.loudefeat;
         moves[0][5] = R.drawable.louprofile;
-        moves[1][0] = 0;
-        moves[1][1] = 0;
-        moves[1][2] = 0;
+        moves[1][0] = R.drawable.ken1;
+        moves[1][1] = R.drawable.ryu2;
+        moves[1][2] = R.drawable.powerfist;
         moves[1][3] = 0;
         moves[1][4] = 0;
         moves[1][5] = 0;

@@ -49,7 +49,7 @@ public class BattleActivity extends AppCompatActivity {
 
         startMusic();
 
-        codeButton = (Button) findViewById(R.id.codeAttack2);
+        codeButton = findViewById(R.id.codeAttack2);
         codeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class BattleActivity extends AppCompatActivity {
             }
         });
 
-        refactorButton = (Button) findViewById(R.id.refactorAttack2);
+        refactorButton = findViewById(R.id.refactorAttack2);
         refactorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
@@ -65,7 +65,7 @@ public class BattleActivity extends AppCompatActivity {
             }
         });
 
-        debugButton = (Button) findViewById(R.id.debugAttack2);
+        debugButton = findViewById(R.id.debugAttack2);
         debugButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v2) {
@@ -79,21 +79,11 @@ public class BattleActivity extends AppCompatActivity {
      * @param playerInput int, represents the move being input by the player.
      */
     public void inputHandler(int playerInput) {
-//        if (currentGame.checkPlayerInput(playerInput)) {
-//            hit = MediaPlayer.create(this, R.raw.right);
-//            hit.start();
-//            hit.stop();
-//            hit.release();
-//            hit = null;
-//        } else {
-//            miss = MediaPlayer.create(this, R.raw.wrong);
-//            miss.start();
-//            miss.stop();
-//            miss.release();
-//            miss = null;
-//        };
-//        playerPipControl();
-//        enemyPipControl();
+        if (currentGame.checkPlayerInput(playerInput)) {
+            playerPipControl();
+        } else {
+            enemyPipControl();
+        };
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                 currentGame.getTell()));
@@ -116,6 +106,17 @@ public class BattleActivity extends AppCompatActivity {
             enemyPip2.setVisibility(View.VISIBLE);
         } else if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
             enemyPip3.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void scoreKeeper() {
+        if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
+            stopMusic();
+            /* play fanfare*/
+            enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                    Constant.DEFEAT_POSE));
+            currentGame.updateTotalScore();
+            currentGame.newBattle();
         }
     }
 

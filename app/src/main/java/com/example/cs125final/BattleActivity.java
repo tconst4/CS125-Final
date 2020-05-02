@@ -12,25 +12,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class BattleActivity extends AppCompatActivity {
-    private Game currentGame;
-    private MoveList moves;
-    private Button codeButton;
-    private Button refactorButton;
-    private Button debugButton;
-    private Button advanceButton;
-    private MediaPlayer music;
-    private MediaPlayer hit;
-    private MediaPlayer miss;
-    private ImageView enemyAvatar;
-    private View teamPip1;
-    private View teamPip2;
-    private View teamPip3;
-    private View enemyPip1;
-    private View enemyPip2;
-    private View enemyPip3;
+    protected Game currentGame;
+    protected MoveList moves;
+    protected Button codeButton;
+    protected Button refactorButton;
+    protected Button debugButton;
+    protected Button advanceButton;
+    protected MediaPlayer music;
+    protected MediaPlayer hit;
+    protected MediaPlayer miss;
+    protected ImageView enemyAvatar;
+    protected View teamPip1;
+    protected View teamPip2;
+    protected View teamPip3;
+    protected View enemyPip1;
+    protected View enemyPip2;
+    protected View enemyPip3;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle);
         teamPip1 = findViewById(R.id.teamPip1);
@@ -113,7 +114,7 @@ public class BattleActivity extends AppCompatActivity {
 
     }
 
-    private void playerPipControl() {
+    protected void playerPipControl() {
         if (currentGame.currentPlayerScore() == Constant.FIRST_POINT) {
             teamPip1.setVisibility(View.VISIBLE);
         } else if (currentGame.currentPlayerScore() == Constant.SECOND_POINT) {
@@ -123,7 +124,7 @@ public class BattleActivity extends AppCompatActivity {
         }
     }
 
-    private void enemyPipControl() {
+    protected void enemyPipControl() {
         if (currentGame.currentEnemyScore() == Constant.FIRST_POINT) {
             enemyPip1.setVisibility(View.VISIBLE);
         } else if (currentGame.currentEnemyScore() == Constant.SECOND_POINT) {
@@ -133,7 +134,7 @@ public class BattleActivity extends AppCompatActivity {
         }
     }
 
-    private void boardReset() {
+    protected void boardReset() {
         advanceButton.setVisibility(View.GONE);
         codeButton.setVisibility(View.VISIBLE);
         refactorButton.setVisibility(View.VISIBLE);
@@ -146,7 +147,7 @@ public class BattleActivity extends AppCompatActivity {
         enemyPip3.setVisibility(View.INVISIBLE);
     }
 
-    private int scoreCheck() {
+    protected int scoreCheck() {
         if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
             return 1;
         } else if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
@@ -156,7 +157,7 @@ public class BattleActivity extends AppCompatActivity {
         }
     }
 
-    private void roundOver() {
+    protected void roundOver() {
         if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
             stopMusic();
             /* play fanfare*/
@@ -200,7 +201,7 @@ public class BattleActivity extends AppCompatActivity {
      * Checks if player exists and releases it, also sets music = null so we can create a new one
      * next time the startMusic function is called.
      */
-    private void stopPlaying() {
+    protected void stopPlaying() {
         if (music != null) {
             music.stop();
             music.release();

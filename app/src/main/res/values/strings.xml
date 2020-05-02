@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CS125 Final</string>
+    <string name="martinName">Martin Beczkiewicz</string>
+    <string name="davidName">David Ruvinskiy</string>
+    <string name="louName">Lou Zeh</string>
+    <string name="benName">Ben Nordick</string>
+    <string name="benName">Ben Nordick</string>
 </resources>

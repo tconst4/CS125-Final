@@ -42,11 +42,11 @@ public class MoveList {
         moves[3][3] = 0;
         moves[3][4] = 0;
         moves[3][5] = 0;
-        moves[4][0] = 0;
-        moves[4][1] = 0;
-        moves[4][2] = 0;
-        moves[4][3] = 0;
-        moves[4][4] = 0;
+        moves[4][0] = R.drawable.ben1;
+        moves[4][1] = R.drawable.ben2;
+        moves[4][2] = R.drawable.ben3;
+        moves[4][3] = R.drawable.benvictory;
+        moves[4][4] = R.drawable.bendefeat;
         moves[4][5] = 0;
         moves[5][0] = 0;
         moves[5][1] = 0;

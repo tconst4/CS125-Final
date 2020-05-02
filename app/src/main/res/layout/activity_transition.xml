@@ -76,4 +76,52 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/benprofile" />
 
+    <ImageView
+        android:id="@+id/davidProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="235dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/davidicon" />
+
+    <ImageView
+        android:id="@+id/martinProfile"
+        android:layout_width="128dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginLeft="141dp"
+        android:layout_marginTop="235dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/matinicon" />
+
+    <ImageView
+        android:id="@+id/geoffButton"
+        android:layout_width="367dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="92dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/geoffbutton" />
+
+    <ImageView
+        android:id="@+id/geoffProfile"
+        android:layout_width="128dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="228dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/geoffprofile" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,25 +19,25 @@ public class MoveList {
      */
     MoveList() {
         moves[0][0] = R.drawable.martin1;
-        moves[0][1] = R.drawable.martin3;
-        moves[0][2] = R.drawable.martin2;
+        moves[0][1] = R.drawable.martin2;
+        moves[0][2] = R.drawable.martin3;
         moves[0][3] = R.drawable.martinvictory;
         moves[0][4] = R.drawable.martindefeat;
-        moves[1][0] = R.drawable.ken1;
-        moves[1][1] = R.drawable.ryu2;
-        moves[1][2] = R.drawable.powerfist;
-        moves[1][3] = R.drawable.victory;
-        moves[1][4] = R.drawable.defeat;
-        moves[2][0] = R.drawable.ken1;
-        moves[2][1] = R.drawable.ryu2;
-        moves[2][2] = R.drawable.powerfist;
-        moves[2][3] = R.drawable.victory;
-        moves[2][4] = R.drawable.defeat;
-        moves[3][0] = R.drawable.lou1;
-        moves[3][1] = R.drawable.lou2;
-        moves[3][2] = R.drawable.lou3;
-        moves[3][3] = R.drawable.louvictory;
-        moves[3][4] = R.drawable.loudefeat;
+        moves[1][0] = R.drawable.david1;
+        moves[1][1] = R.drawable.david2;
+        moves[1][2] = R.drawable.david3;
+        moves[1][3] = R.drawable.davidvictory;
+        moves[1][4] = R.drawable.daviddefeat;
+        moves[2][0] = R.drawable.lou1;
+        moves[2][1] = R.drawable.lou2;
+        moves[2][2] = R.drawable.lou3;
+        moves[2][3] = R.drawable.louvictory;
+        moves[2][4] = R.drawable.loudefeat;
+        moves[3][0] = 0;
+        moves[3][1] = 0;
+        moves[3][2] = 0;
+        moves[3][3] = 0;
+        moves[3][4] = 0;
         moves[4][0] = R.drawable.ben1;
         moves[4][1] = R.drawable.ben2;
         moves[4][2] = R.drawable.ben3;
@@ -48,7 +48,6 @@ public class MoveList {
         moves[5][2] = R.drawable.geoff3;
         moves[5][3] = R.drawable.geoffvictory;
         moves[5][4] = R.drawable.geoffdefeat;
-
     }
 
     /**

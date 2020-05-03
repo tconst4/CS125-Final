@@ -26,17 +26,17 @@ public class TransitionActivity extends AppCompatActivity {
                 name.setText(R.string.martinName);
                 break;
             case 1:
-                name.setText("Fight 2");
-                break;
-            case 2:
                 icon = findViewById(R.id.davidProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.davidName);
                 break;
-            case 3:
+            case 2:
                 icon = findViewById(R.id.louProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.louName);
+                break;
+            case 3:
+                name.setText("Dan Gleason");
                 break;
             case 4:
                 icon = findViewById(R.id.benProfile);

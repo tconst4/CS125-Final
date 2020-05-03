@@ -33,11 +33,11 @@ public class MoveList {
         moves[2][2] = R.drawable.lou3;
         moves[2][3] = R.drawable.louvictory;
         moves[2][4] = R.drawable.loudefeat;
-        moves[3][0] = 0;
-        moves[3][1] = 0;
-        moves[3][2] = 0;
-        moves[3][3] = 0;
-        moves[3][4] = 0;
+        moves[3][0] = R.drawable.ken1;
+        moves[3][1] = R.drawable.ryu2;
+        moves[3][2] = R.drawable.powerfist;
+        moves[3][3] = R.drawable.victory;
+        moves[3][4] = R.drawable.defeat;
         moves[4][0] = R.drawable.ben1;
         moves[4][1] = R.drawable.ben2;
         moves[4][2] = R.drawable.ben3;

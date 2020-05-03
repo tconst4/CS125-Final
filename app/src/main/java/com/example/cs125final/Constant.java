@@ -4,9 +4,9 @@ public class Constant {
 
     public static final int CODE_INPUT = 0;
 
-    public static final int REFACTOR_INPUT = 1;
+    public static final int DEBUG_INPUT = 1;
 
-    public static final int DEBUG_INPUT = 2;
+    public static final int REFACTOR_INPUT = 2;
 
     public static final int VICTORY_POSE = 3;
 

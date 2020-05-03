@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BattleActivity extends AppCompatActivity {
     protected Game currentGame;
-    public static int currentRound = 0;
+    //public static int currentRound = 0;
     protected MoveList moves;
     protected Button codeButton;
     protected Button refactorButton;
@@ -57,7 +57,7 @@ public class BattleActivity extends AppCompatActivity {
                 TransitionActivity.class);
 
         currentGame = new Game();
-        currentRound = currentGame.getCurrentRound();
+        //currentRound = currentGame.getCurrentRound();
         moves = new MoveList();
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
@@ -100,7 +100,10 @@ public class BattleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent toMenu = new Intent(BattleActivity.this, StartScreen.class);
+                Game.roundReset();
                 currentGame = new Game();
+                stopMusic();
+                finish();
                 startActivity(toMenu);
             }
         });
@@ -116,14 +119,6 @@ public class BattleActivity extends AppCompatActivity {
         });
     }
 
-//    public void onResume() {
-//        super.onResume();
-//        //fightTransition.removeExtra("round");
-//        //fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
-//        System.out.println(currentGame.getCurrentRound());
-//        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
-//                currentGame.getTell()));
-//    }
     /**
      * Handles all inputs from the 3 player buttons.
      * @param playerInput int, represents the move being input by the player.
@@ -164,19 +159,6 @@ public class BattleActivity extends AppCompatActivity {
         }
     }
 
-    protected void boardReset() {
-        advanceButton.setVisibility(View.GONE);
-        codeButton.setVisibility(View.VISIBLE);
-        refactorButton.setVisibility(View.VISIBLE);
-        debugButton.setVisibility(View.VISIBLE);
-        teamPip1.setVisibility(View.INVISIBLE);
-        teamPip2.setVisibility(View.INVISIBLE);
-        teamPip3.setVisibility(View.INVISIBLE);
-        enemyPip1.setVisibility(View.INVISIBLE);
-        enemyPip2.setVisibility(View.INVISIBLE);
-        enemyPip3.setVisibility(View.INVISIBLE);
-    }
-
     protected int scoreCheck() {
         if(currentGame.currentPlayerScore() == Constant.THIRD_POINT) {
             return 1;
@@ -200,7 +182,7 @@ public class BattleActivity extends AppCompatActivity {
             victory.setVisibility(View.VISIBLE);
             currentGame.updateTotalScore();
             currentGame.newBattle();
-            currentRound = currentGame.getCurrentRound();
+            //currentRound = currentGame.getCurrentRound();
         }
         if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
             stopMusic();
@@ -221,7 +203,7 @@ public class BattleActivity extends AppCompatActivity {
      */
     public void startMusic() {
         if (music == null) {
-            switch (currentRound) {
+            switch (Game.round) {
                 case 4:
                     music = MediaPlayer.create(this, R.raw.subboss);
                     music.setLooping(true);

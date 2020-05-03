@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="martinCode">Martin used Code!</string>
+    <string name="martinDebug">Martin used Debug!</string>
+    <string name="martinRefactor">Martin used Refactor!</string>
+
+    <string name="davidCode">David used Code!</string>
+    <string name="davidDebug">David used Debug!</string>
+    <string name="davidRefactor">David used Refactor!</string>
+
+    <string name="louCode">Lou used Code!</string>
+    <string name="louDebug">Lou used Debug!</string>
+    <string name="louRefactor">Lou used Refactor!</string>
+
+    <string name="danielCode">Daniel used Code!</string>
+    <string name="danielDebug">Daniel used Debug!</string>
+    <string name="danielRefactor">Daniel used Refactor!</string>
+
+    <string name="benCode">Ben used Code!</string>
+    <string name="benDebug">Ben used Debug!</string>
+    <string name="benRefactor">Ben used Refactor!</string>
+
+    <string name="geoffCode">Geoff used Code!</string>
+    <string name="geoffDebug">Geoff used Debug!</string>
+    <string name="geoffRefactor">Geoff used Refactor!</string>
+</resources>

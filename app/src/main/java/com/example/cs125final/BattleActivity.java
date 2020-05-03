@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BattleActivity extends AppCompatActivity {
     protected Game currentGame;
+    protected MoveTitleList data;
     protected MoveList moves;
     protected Button codeButton;
     protected Button refactorButton;
@@ -32,6 +34,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
+    protected TextView moveTitle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,8 @@ public class BattleActivity extends AppCompatActivity {
         menuButton = findViewById(R.id.menuButton);
         victory = findViewById(R.id.victory);
         defeat = findViewById(R.id.defeat);
+        moveTitle = findViewById(R.id.moveText);
+        data = new MoveTitleList();
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
         final Intent fightTransition = new Intent(BattleActivity.this,
@@ -128,9 +133,12 @@ public class BattleActivity extends AppCompatActivity {
             enemyPipControl();
         };
         if (scoreCheck() < 0) {
+            moveTitle.setText((data.getMoveText(currentGame.getCurrentRound(),
+                    currentGame.getTell())));
             currentGame.setTell();
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     currentGame.getTell()));
+
         } else {
             roundOver();
         }
@@ -168,6 +176,7 @@ public class BattleActivity extends AppCompatActivity {
         enemyPip1.setVisibility(View.INVISIBLE);
         enemyPip2.setVisibility(View.INVISIBLE);
         enemyPip3.setVisibility(View.INVISIBLE);
+        moveTitle.setVisibility(View.INVISIBLE);
     }
 
     protected int scoreCheck() {

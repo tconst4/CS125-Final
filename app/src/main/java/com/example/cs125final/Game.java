@@ -50,6 +50,7 @@ public class Game {
     public void setTell() {
         Random rand = new Random();
         int newInt = rand.nextInt(Constant.TELL_LIMIT);
+
         while (newInt == lastTell) {
             newInt = rand.nextInt(Constant.TELL_LIMIT);
         }

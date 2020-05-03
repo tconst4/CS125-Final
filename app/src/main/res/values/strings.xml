@@ -7,8 +7,8 @@
     <string name="danielName">Daniel Gleason</string>
     <string name="gameOverTop">You Are Not Ready</string>
     <string name="gameOverBot">Maybe try a few more homework problems?</string>
-    <string name="gameOverTopGeoff">NullPointerException</string>
-    <string name="gameOverBotGeoff">Opponent Not Found</string>
+    <string name="gameOverTopGeoff">NullTeacherException</string>
+    <string name="gameOverBotGeoff">No Opponent Found</string>
     <string name="gameVictoryTop">Congratulations!</string>
     <string name="gameVictoryBot">You are now a Head CA of cs125!</string>
 </resources>

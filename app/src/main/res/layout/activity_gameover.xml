@@ -104,8 +104,8 @@
 
     <TextView
         android:id="@+id/gOverTopGeoff"
-        android:layout_width="268dp"
-        android:layout_height="46dp"
+        android:layout_width="300dp"
+        android:layout_height="59dp"
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
         android:layout_marginTop="88dp"
@@ -113,6 +113,7 @@
         android:bufferType="normal"
         android:capitalize="none"
         android:fontFamily="casual"
+        android:gravity="center"
         android:lineSpacingExtra="8sp"
         android:text="@string/gameOverTopGeoff"
         android:textColor="#E10B0B"

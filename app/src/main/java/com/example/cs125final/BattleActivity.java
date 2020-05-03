@@ -33,7 +33,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
-    protected GifImageView background;
+//    protected GifImageView background;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,13 +51,13 @@ public class BattleActivity extends AppCompatActivity {
         menuButton = findViewById(R.id.menuButton);
         victory = findViewById(R.id.victory);
         defeat = findViewById(R.id.defeat);
-        background = findViewById(R.id.backdrop);
+//        background = findViewById(R.id.backdrop);
 
-        switch(currentGame.getCurrentRound()) {
-            case 6:
-                background.setImageResource(R.drawable.redBattle);
-            default: background.setImageResource(R.drawable.battlegif);
-        }
+//        switch(currentGame.getCurrentRound()) {
+//            case 6:
+//                background.setImageResource(R.drawable.redbattle);
+//            default: background.setImageResource(R.drawable.battlegif);
+//        }
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
 

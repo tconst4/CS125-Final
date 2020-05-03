@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BattleActivity extends AppCompatActivity {
     protected Game currentGame;
-    //public static int currentRound = 0;
     protected MoveList moves;
     protected Button codeButton;
     protected Button refactorButton;
@@ -57,7 +56,6 @@ public class BattleActivity extends AppCompatActivity {
                 TransitionActivity.class);
 
         currentGame = new Game();
-        //currentRound = currentGame.getCurrentRound();
         moves = new MoveList();
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),

@@ -52,7 +52,12 @@ public class BattleActivity extends AppCompatActivity {
         victory = findViewById(R.id.victory);
         defeat = findViewById(R.id.defeat);
         background = findViewById(R.id.backdrop);
-        background.setImageResource(redBattle);
+
+        switch(currentGame.getCurrentRound()) {
+            case 6:
+                background.setImageResource(R.drawable.redBattle);
+            default: background.setImageResource(R.drawable.battlegif);
+        }
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
 

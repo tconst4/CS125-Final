@@ -7,5 +7,7 @@
     <string name="gameOverTop">You Are Not Ready</string>
     <string name="gameOverBot">Maybe try a few more homework problems?</string>
     <string name="gameOverTopGeoff">NullPointerException</string>
-    <string name="gameOverBotGeoff">Professor Not Found</string>
+    <string name="gameOverBotGeoff">Opponent Not Found</string>
+    <string name="gameVictoryTop">Congratulations!</string>
+    <string name="gameVictoryBot">You are now a Head CA of cs125!</string>
 </resources>

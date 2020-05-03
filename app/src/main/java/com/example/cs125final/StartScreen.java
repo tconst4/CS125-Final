@@ -29,8 +29,11 @@ public class StartScreen extends AppCompatActivity {
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final Intent gameOver = new Intent(StartScreen.this,
+                        GameOverActivity.class);
                 finish();
-                System.exit(0);
+                startActivity(gameOver);
+                //System.exit(0);
             }
         });
     }

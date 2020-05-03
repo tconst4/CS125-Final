@@ -12,8 +12,6 @@ public class Constant {
 
     public static final int DEFEAT_POSE = 4;
 
-    public static final int PROFILE = 5;
-
     public static final int FIRST_POINT = 1;
 
     public static final int SECOND_POINT = 2;
@@ -22,6 +20,5 @@ public class Constant {
 
     public static final int TELL_LIMIT = 3;
 
-
-
+    public static final int PERFECT_SCORE = 15;
 }

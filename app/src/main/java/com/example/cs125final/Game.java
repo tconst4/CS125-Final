@@ -102,7 +102,8 @@ public class Game {
      * this will end up being 12, which is the score we will check to access the bonus round.
      */
     public void updateTotalScore() {
-        totalScore = totalScore + currentBattle.getPlayerScore();
+        totalScore = totalScore
+                + (currentBattle.getPlayerScore() - currentBattle.getEnemyScore());
     }
 
 }

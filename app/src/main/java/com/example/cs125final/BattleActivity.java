@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class BattleActivity extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
+    protected GifImageView background;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,8 @@ public class BattleActivity extends AppCompatActivity {
         menuButton = findViewById(R.id.menuButton);
         victory = findViewById(R.id.victory);
         defeat = findViewById(R.id.defeat);
+        background = findViewById(R.id.backdrop);
+        background.setImageResource(redBattle);
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
 

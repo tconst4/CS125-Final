@@ -22,7 +22,7 @@ public class StartScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(startGame);
-                finish();
+                //finish();
             }
         });
         quitButton = (Button) findViewById(R.id.quit_button);

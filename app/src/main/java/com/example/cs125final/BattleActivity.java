@@ -32,6 +32,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
+    protected Intent fightTransition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class BattleActivity extends AppCompatActivity {
         defeat = findViewById(R.id.defeat);
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
+
         final Intent fightTransition = new Intent(BattleActivity.this,
                 TransitionActivity.class);
 
@@ -61,8 +63,6 @@ public class BattleActivity extends AppCompatActivity {
                 currentGame.getTell()));
 
         startMusic();
-        fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
-        System.out.println(currentGame.getCurrentRound());
 
         codeButton = findViewById(R.id.codeAttack);
         codeButton.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +113,8 @@ public class BattleActivity extends AppCompatActivity {
 
     public void onResume() {
         super.onResume();
+        //fightTransition.removeExtra("round");
+        //fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
         System.out.println(currentGame.getCurrentRound());
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                 currentGame.getTell()));

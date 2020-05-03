@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Game {
     private static int lastTell = -1;
-    private static int round = 0;
+    public static int round = 0;
     private Battle currentBattle;
     /**
      * When a new game is created there should be a new (first) battle created to go along with it.

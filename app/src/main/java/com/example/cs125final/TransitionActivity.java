@@ -17,31 +17,32 @@ public class TransitionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition);
-        int currentRound = getIntent().getIntExtra("round", 0);
-        name = findViewById(R.id.nameLabel);
-        switch (currentRound) {
-            case 0:
-                icon = findViewById(R.id.martinProfile);
-                icon.setVisibility(View.VISIBLE);
-                name.setText(R.string.martinName);
-                break;
-            case 1:
-                break;
-            case 2:
-                icon = findViewById(R.id.davidProfile);
-                icon.setVisibility(View.VISIBLE);
-                name.setText(R.string.davidName);
-                break;
-            case 3:
-                icon = findViewById(R.id.louProfile);
-                icon.setVisibility(View.VISIBLE);
-                name.setText(R.string.louName);
-                break;
-            case 4:
-                icon = findViewById(R.id.benProfile);
-                icon.setVisibility(View.VISIBLE);
-                name.setText(R.string.benName);
-        }
+        //int currentRound = getIntent().getIntExtra("round", 0);
+//        name = findViewById(R.id.nameLabel);
+//        switch (Game.round) {
+//            case 0:
+//                icon = findViewById(R.id.martinProfile);
+//                icon.setVisibility(View.VISIBLE);
+//                name.setText(R.string.martinName);
+//                break;
+//            case 1:
+//                name.setText("Fight 2");
+//                break;
+//            case 2:
+//                icon = findViewById(R.id.davidProfile);
+//                icon.setVisibility(View.VISIBLE);
+//                name.setText(R.string.davidName);
+//                break;
+//            case 3:
+//                icon = findViewById(R.id.louProfile);
+//                icon.setVisibility(View.VISIBLE);
+//                name.setText(R.string.louName);
+//                break;
+//            case 4:
+//                icon = findViewById(R.id.benProfile);
+//                icon.setVisibility(View.VISIBLE);
+//                name.setText(R.string.benName);
+//        }
 
         final Intent battleActivity = new Intent(TransitionActivity.this,
                 BattleActivity.class);
@@ -49,7 +50,7 @@ public class TransitionActivity extends AppCompatActivity {
         nextFight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                icon.setVisibility(View.INVISIBLE);
+               // icon.setVisibility(View.INVISIBLE);
                 startActivity(battleActivity);
             }
         });

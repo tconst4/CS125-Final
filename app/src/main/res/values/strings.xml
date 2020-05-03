@@ -4,4 +4,8 @@
     <string name="davidName">David Ruvinskiy</string>
     <string name="louName">Lou Zeh</string>
     <string name="benName">Ben Nordick</string>
+    <string name="gameOverTop">You Are Not Ready</string>
+    <string name="gameOverBot">Maybe try a few more homework problems?</string>
+    <string name="gameOverTopGeoff">NullPointerException</string>
+    <string name="gameOverBotGeoff">Professor Not Found</string>
 </resources>

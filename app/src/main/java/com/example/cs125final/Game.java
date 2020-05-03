@@ -43,6 +43,10 @@ public class Game {
         return round;
     }
 
+    public static void roundReset() {
+        round = 0;
+    }
+
     /**
      * Generates an int (0-2) to be checked against user inputs. Will need to be called each time a
      * player gives an input to set up the next move state.

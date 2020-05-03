@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BattleActivity extends AppCompatActivity {
     protected Game currentGame;
+    public static int currentRound = 0;
     protected MoveList moves;
     protected Button codeButton;
     protected Button refactorButton;
@@ -21,8 +22,6 @@ public class BattleActivity extends AppCompatActivity {
     protected Button menuButton;
     protected Button startOverButton;
     protected MediaPlayer music;
-//    protected MediaPlayer bossMusic;
-//    protected MediaPlayer subbossMusic;
     protected MediaPlayer hit;
     protected MediaPlayer miss;
     protected ImageView enemyAvatar;
@@ -34,7 +33,6 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
-    protected Intent fightTransition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +57,7 @@ public class BattleActivity extends AppCompatActivity {
                 TransitionActivity.class);
 
         currentGame = new Game();
+        currentRound = currentGame.getCurrentRound();
         moves = new MoveList();
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
@@ -101,14 +100,18 @@ public class BattleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent toMenu = new Intent(BattleActivity.this, StartScreen.class);
+                currentGame = new Game();
                 startActivity(toMenu);
             }
         });
         startOverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toStart = new Intent(BattleActivity.this, StartScreen.class);
-                startActivity(toStart);
+                Game.roundReset();
+                currentGame = new Game();
+                stopMusic();
+                finish();
+                startActivity(fightTransition);
             }
         });
     }
@@ -197,6 +200,7 @@ public class BattleActivity extends AppCompatActivity {
             victory.setVisibility(View.VISIBLE);
             currentGame.updateTotalScore();
             currentGame.newBattle();
+            currentRound = currentGame.getCurrentRound();
         }
         if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
             stopMusic();
@@ -217,7 +221,7 @@ public class BattleActivity extends AppCompatActivity {
      */
     public void startMusic() {
         if (music == null) {
-            switch (currentGame.round) {
+            switch (currentRound) {
                 case 4:
                     music = MediaPlayer.create(this, R.raw.subboss);
                     music.setLooping(true);
@@ -233,40 +237,6 @@ public class BattleActivity extends AppCompatActivity {
         }
         music.start();
     }
-//        switch (currentGame.round) {
-//            case 6:
-//                if (bossMusic == null) {
-//                    bossMusic = MediaPlayer.create(this, R.raw.boss);
-//                    bossMusic.setLooping(true);
-//                }
-//                bossMusic.start();
-//            case 5:
-//                if (subbossMusic == null) {
-//                    subbossMusic = MediaPlayer.create(this, R.raw.boss);
-//                    subbossMusic.setLooping(true);
-//                }
-//                subbossMusic.start();
-//            default:
-//                if (music == null) {
-//                    music = MediaPlayer.create(this, R.raw.battle);
-//                    music.setLooping(true);
-//                }
-//                music.start();
-//        }
-//        if (currentGame.round > 0) {
-//            if (bossMusic == null) {
-//                bossMusic = MediaPlayer.create(this, R.raw.boss);
-//                bossMusic.setLooping(true);
-//            }
-//            bossMusic.start();
-//        } else {
-//            if (music == null) {
-//                music = MediaPlayer.create(this, R.raw.battle);
-//                music.setLooping(true);
-//            }
-//            music.start();
-//        }
-//    }
 
     /**
      * calls a method to stop and release the music player resources.

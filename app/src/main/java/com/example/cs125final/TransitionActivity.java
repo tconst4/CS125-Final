@@ -48,7 +48,7 @@ public class TransitionActivity extends AppCompatActivity {
                 icon.setVisibility(View.VISIBLE);
                 name.setText("NEW CHALLEN-ger");
                 break;
-            default: name.setText(Game.round + " not found");
+            default: name.setText(" not found");
         }
 
         final Intent battleActivity = new Intent(TransitionActivity.this,

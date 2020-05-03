@@ -57,7 +57,7 @@ public class TransitionActivity extends AppCompatActivity {
         nextFight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // icon.setVisibility(View.INVISIBLE);
+               //icon.setVisibility(View.INVISIBLE);
                 startActivity(battleActivity);
             }
         });

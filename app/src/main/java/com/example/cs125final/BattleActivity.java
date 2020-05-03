@@ -21,6 +21,8 @@ public class BattleActivity extends AppCompatActivity {
     protected Button menuButton;
     protected Button startOverButton;
     protected MediaPlayer music;
+//    protected MediaPlayer bossMusic;
+//    protected MediaPlayer subbossMusic;
     protected MediaPlayer hit;
     protected MediaPlayer miss;
     protected ImageView enemyAvatar;
@@ -215,12 +217,56 @@ public class BattleActivity extends AppCompatActivity {
      */
     public void startMusic() {
         if (music == null) {
-            music = MediaPlayer.create(this, R.raw.battle);
-            music.setLooping(true);
-            //music = MediaPlayer.create(this, R.raw.boss);
+            switch (currentGame.round) {
+                case 4:
+                    music = MediaPlayer.create(this, R.raw.subboss);
+                    music.setLooping(true);
+                    break;
+                case 5:
+                    music = MediaPlayer.create(this, R.raw.boss);
+                    music.setLooping(true);
+                    break;
+                default:
+                    music = MediaPlayer.create(this, R.raw.battle);
+                    music.setLooping(true);
+            }
         }
         music.start();
     }
+//        switch (currentGame.round) {
+//            case 6:
+//                if (bossMusic == null) {
+//                    bossMusic = MediaPlayer.create(this, R.raw.boss);
+//                    bossMusic.setLooping(true);
+//                }
+//                bossMusic.start();
+//            case 5:
+//                if (subbossMusic == null) {
+//                    subbossMusic = MediaPlayer.create(this, R.raw.boss);
+//                    subbossMusic.setLooping(true);
+//                }
+//                subbossMusic.start();
+//            default:
+//                if (music == null) {
+//                    music = MediaPlayer.create(this, R.raw.battle);
+//                    music.setLooping(true);
+//                }
+//                music.start();
+//        }
+//        if (currentGame.round > 0) {
+//            if (bossMusic == null) {
+//                bossMusic = MediaPlayer.create(this, R.raw.boss);
+//                bossMusic.setLooping(true);
+//            }
+//            bossMusic.start();
+//        } else {
+//            if (music == null) {
+//                music = MediaPlayer.create(this, R.raw.battle);
+//                music.setLooping(true);
+//            }
+//            music.start();
+//        }
+//    }
 
     /**
      * calls a method to stop and release the music player resources.

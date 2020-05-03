@@ -135,6 +135,7 @@ public class BattleActivity extends AppCompatActivity {
         if (scoreCheck() < 0) {
             moveTitle.setText((data.getMoveText(currentGame.getCurrentRound(),
                     currentGame.getTell())));
+            moveTitle.setVisibility(View.VISIBLE);
             currentGame.setTell();
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     currentGame.getTell()));
@@ -199,6 +200,7 @@ public class BattleActivity extends AppCompatActivity {
             refactorButton.setVisibility(View.INVISIBLE);
             debugButton.setVisibility(View.INVISIBLE);
             advanceButton.setVisibility(View.VISIBLE);
+            moveTitle.setVisibility(View.INVISIBLE);
             victory.setVisibility(View.VISIBLE);
             currentGame.updateTotalScore();
             currentGame.newBattle();
@@ -212,6 +214,7 @@ public class BattleActivity extends AppCompatActivity {
             refactorButton.setVisibility(View.INVISIBLE);
             debugButton.setVisibility(View.INVISIBLE);
             defeat.setVisibility(View.VISIBLE);
+            moveTitle.setVisibility(View.INVISIBLE);
             startOverButton.setVisibility(View.VISIBLE);
             menuButton.setVisibility(View.VISIBLE);
         }

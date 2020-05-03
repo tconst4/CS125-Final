@@ -2,6 +2,7 @@ package com.example.cs125final;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class TransitionActivity extends AppCompatActivity {
     private ImageView icon;
     private TextView name;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +28,19 @@ public class TransitionActivity extends AppCompatActivity {
                 name.setText(R.string.martinName);
                 break;
             case 2:
-                break;
-            case 3:
                 icon = findViewById(R.id.davidProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.davidName);
                 break;
-            case 4:
+            case 3:
                 icon = findViewById(R.id.louProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.louName);
+                break;
+            case 4:
+                icon = findViewById(R.id.danielProfile);
+                icon.setVisibility(View.VISIBLE);
+                name.setText(R.string.danielName);
                 break;
             case 5:
                 icon = findViewById(R.id.benProfile);

@@ -6,7 +6,7 @@ package com.example.cs125final;
  * opponent used.
  */
 public class MoveTitleList {
-    private int[][] moves = new int[3][3];
+    private int[][] moves = new int[6][3];
 
     MoveTitleList() {
         moves[0][0] = R.string.martinCode;

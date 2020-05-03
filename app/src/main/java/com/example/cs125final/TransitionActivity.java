@@ -17,27 +17,27 @@ public class TransitionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition);
-        int currentRound = getIntent().getIntExtra("round", 1);
+        int currentRound = getIntent().getIntExtra("round", 0);
         name = findViewById(R.id.nameLabel);
         switch (currentRound) {
-            case 1:
+            case 0:
                 icon = findViewById(R.id.martinProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.martinName);
                 break;
-            case 2:
+            case 1:
                 break;
-            case 3:
+            case 2:
                 icon = findViewById(R.id.davidProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.davidName);
                 break;
-            case 4:
+            case 3:
                 icon = findViewById(R.id.louProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.louName);
                 break;
-            case 5:
+            case 4:
                 icon = findViewById(R.id.benProfile);
                 icon.setVisibility(View.VISIBLE);
                 name.setText(R.string.benName);

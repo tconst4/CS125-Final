@@ -30,10 +30,9 @@ public class StartScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent gameOver = new Intent(StartScreen.this,
-                        GameOverActivity.class);
+                        QuitActivity.class);
                 finish();
                 startActivity(gameOver);
-                //System.exit(0);
             }
         });
     }

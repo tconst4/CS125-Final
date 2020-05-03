@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class BattleActivity extends AppCompatActivity {
     protected Game currentGame;
+    protected MoveTitleList data;
     protected MoveList moves;
     protected Button codeButton;
     protected Button refactorButton;
@@ -33,7 +35,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
-//    protected GifImageView background;
+    protected TextView moveTitle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,13 +53,8 @@ public class BattleActivity extends AppCompatActivity {
         menuButton = findViewById(R.id.menuButton);
         victory = findViewById(R.id.victory);
         defeat = findViewById(R.id.defeat);
-//        background = findViewById(R.id.backdrop);
-
-//        switch(currentGame.getCurrentRound()) {
-//            case 6:
-//                background.setImageResource(R.drawable.redbattle);
-//            default: background.setImageResource(R.drawable.battlegif);
-//        }
+        moveTitle = findViewById(R.id.moveText);
+        data = new MoveTitleList();
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
 
@@ -71,13 +68,14 @@ public class BattleActivity extends AppCompatActivity {
                 NewChallenger.class);
 
         currentGame = new Game();
-        //currentGame.gameReset();
         moves = new MoveList();
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                 currentGame.getTell()));
 
         startMusic();
+        fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
+        System.out.println(currentGame.getCurrentRound());
 
         codeButton = findViewById(R.id.codeAttack);
         codeButton.setOnClickListener(new View.OnClickListener() {
@@ -140,11 +138,8 @@ public class BattleActivity extends AppCompatActivity {
         startOverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Game.gameReset();
-                currentGame = new Game();
-                stopMusic();
-                finish();
-                startActivity(fightTransition);
+                Intent toStart = new Intent(BattleActivity.this, StartScreen.class);
+                startActivity(toStart);
             }
         });
     }
@@ -160,9 +155,13 @@ public class BattleActivity extends AppCompatActivity {
             enemyPipControl();
         };
         if (scoreCheck() < 0) {
+            moveTitle.setText((data.getMoveText(currentGame.getCurrentRound(),
+                    currentGame.getTell())));
+            moveTitle.setVisibility(View.VISIBLE);
             currentGame.setTell();
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     currentGame.getTell()));
+
         } else {
             roundOver();
         }
@@ -209,10 +208,10 @@ public class BattleActivity extends AppCompatActivity {
             refactorButton.setVisibility(View.INVISIBLE);
             debugButton.setVisibility(View.INVISIBLE);
             advanceButton.setVisibility(View.VISIBLE);
+            moveTitle.setVisibility(View.INVISIBLE);
             victory.setVisibility(View.VISIBLE);
             currentGame.updateTotalScore();
             currentGame.newBattle();
-            //currentRound = currentGame.getCurrentRound();
         }
         if (currentGame.currentEnemyScore() == Constant.THIRD_POINT) {
             stopMusic();
@@ -223,6 +222,7 @@ public class BattleActivity extends AppCompatActivity {
             refactorButton.setVisibility(View.INVISIBLE);
             debugButton.setVisibility(View.INVISIBLE);
             defeat.setVisibility(View.VISIBLE);
+            moveTitle.setVisibility(View.INVISIBLE);
             startOverButton.setVisibility(View.VISIBLE);
             menuButton.setVisibility(View.VISIBLE);
         }

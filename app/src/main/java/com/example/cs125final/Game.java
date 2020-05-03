@@ -14,6 +14,7 @@ public class Game {
      * When a new game is created there should be a new (first) battle created to go along with it.
      */
     Game() {
+
         currentBattle = new Battle();
     }
 
@@ -39,6 +40,9 @@ public class Game {
     }
 
 
+    public int getTotalScore() {
+        return totalScore;
+    }
     public int getCurrentRound() {
         return round;
     }

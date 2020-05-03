@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/blackbackground" />
 
     <TextView
-        android:id="@+id/gameVitoryBot2"
+        android:id="@+id/gameVitoryBot"
         android:layout_width="282dp"
         android:layout_height="112dp"
         android:layout_marginStart="64dp"
@@ -66,25 +66,6 @@
         android:textColor="#E10B0B"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/gOverBot"
-        android:layout_width="344dp"
-        android:layout_height="139dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="468dp"
-        android:fontFamily="casual"
-        android:lineSpacingExtra="8sp"
-        android:text="@string/gameOverBot"
-        android:textColor="#E10B0B"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="normal"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -136,27 +117,6 @@
         tools:visibility="invisible" />
 
     <TextView
-        android:id="@+id/gOverTop"
-        android:layout_width="288dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="84dp"
-        android:autoText="false"
-        android:bufferType="normal"
-        android:capitalize="none"
-        android:fontFamily="casual"
-        android:lineSpacingExtra="8sp"
-        android:text="@string/gameOverTop"
-        android:textColor="#E10B0B"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="invisible" />
-
-    <TextView
         android:id="@+id/gOverTopGeoff"
         android:layout_width="315dp"
         android:layout_height="60dp"
@@ -176,5 +136,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/toMenu"
+        android:layout_width="365dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginBottom="33dp"
+        android:text="Back to Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

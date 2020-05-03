@@ -4,6 +4,7 @@
     <string name="davidName">David Ruvinskiy</string>
     <string name="louName">Lou Zeh</string>
     <string name="benName">Ben Nordick</string>
+    <string name="danielName">Daniel Gleason</string>
     <string name="gameOverTop">You Are Not Ready</string>
     <string name="gameOverBot">Maybe try a few more homework problems?</string>
     <string name="gameOverTopGeoff">NullPointerException</string>

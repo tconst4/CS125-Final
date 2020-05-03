@@ -52,6 +52,9 @@ public class BattleActivity extends AppCompatActivity {
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
 
+        final Intent endGame = new Intent(BattleActivity.this,
+                GameOverActivity.class);
+
         final Intent fightTransition = new Intent(BattleActivity.this,
                 TransitionActivity.class);
 
@@ -91,7 +94,19 @@ public class BattleActivity extends AppCompatActivity {
         advanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                   startActivity(fightTransition);
+                switch(Game.round) {
+                    case 5:
+                        startActivity(endGame);
+                        break;
+                    case 4:
+                        if (currentGame.getTotalScore() != Constant.PERFECT_SCORE) {
+                            startActivity(endGame);
+                        } else if (currentGame.getTotalScore() == Constant.PERFECT_SCORE) {
+                            startActivity(fightTransition);
+                        }
+                        break;
+                    default: startActivity(fightTransition);
+                }
             }
         });
         menuButton.setOnClickListener(new View.OnClickListener() {

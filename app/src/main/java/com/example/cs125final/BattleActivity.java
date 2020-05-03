@@ -111,14 +111,14 @@ public class BattleActivity extends AppCompatActivity {
         });
     }
 
-    public void onResume() {
-        super.onResume();
-        //fightTransition.removeExtra("round");
-        //fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
-        System.out.println(currentGame.getCurrentRound());
-        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
-                currentGame.getTell()));
-    }
+//    public void onResume() {
+//        super.onResume();
+//        //fightTransition.removeExtra("round");
+//        //fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
+//        System.out.println(currentGame.getCurrentRound());
+//        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+//                currentGame.getTell()));
+//    }
     /**
      * Handles all inputs from the 3 player buttons.
      * @param playerInput int, represents the move being input by the player.

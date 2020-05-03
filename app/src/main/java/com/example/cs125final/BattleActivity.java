@@ -58,6 +58,9 @@ public class BattleActivity extends AppCompatActivity {
         final Intent fightTransition = new Intent(BattleActivity.this,
                 TransitionActivity.class);
 
+        final Intent newChallenger = new Intent(BattleActivity.this,
+                NewChallenger.class);
+
         currentGame = new Game();
         //currentGame.gameReset();
         moves = new MoveList();
@@ -107,7 +110,7 @@ public class BattleActivity extends AppCompatActivity {
                         if (currentGame.getTotalScore() != Constant.PERFECT_SCORE) {
                             startActivity(endGame);
                         } else if (currentGame.getTotalScore() == Constant.PERFECT_SCORE) {
-                            startActivity(fightTransition);
+                            startActivity(newChallenger);
                         }
                         break;
                     default: startActivity(fightTransition);

@@ -13,6 +13,8 @@
         <activity android:name=".GeoffRound" />
         <activity android:name=".StoryActivity" />
         <activity android:name=".TransitionActivity" />
+        <activity android:name=".GameOverActivity" />
+        <activity android:name=".QuitActivity" />
         <activity android:name=".BattleActivity" />
         <activity android:name=".StartScreen">
             <intent-filter>

@@ -59,6 +59,7 @@ public class BattleActivity extends AppCompatActivity {
                 TransitionActivity.class);
 
         currentGame = new Game();
+        //currentGame.gameReset();
         moves = new MoveList();
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
@@ -94,11 +95,15 @@ public class BattleActivity extends AppCompatActivity {
         advanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(Game.round) {
-                    case 5:
+                System.out.println("Round: " + currentGame.getCurrentRound());
+                System.out.println("Score: " + currentGame.getTotalScore());
+                System.out.println("Game: " + Game.gameCount);
+                switch(currentGame.getCurrentRound()) {
+
+                    case 6:
                         startActivity(endGame);
                         break;
-                    case 4:
+                    case 5:
                         if (currentGame.getTotalScore() != Constant.PERFECT_SCORE) {
                             startActivity(endGame);
                         } else if (currentGame.getTotalScore() == Constant.PERFECT_SCORE) {
@@ -113,7 +118,7 @@ public class BattleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent toMenu = new Intent(BattleActivity.this, StartScreen.class);
-                Game.roundReset();
+                Game.gameReset();
                 currentGame = new Game();
                 stopMusic();
                 finish();
@@ -123,7 +128,7 @@ public class BattleActivity extends AppCompatActivity {
         startOverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Game.roundReset();
+                Game.gameReset();
                 currentGame = new Game();
                 stopMusic();
                 finish();

@@ -19,11 +19,9 @@
 
     <EditText
         android:id="@+id/nameLabel"
-        android:layout_width="281dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="406dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="88dp"
         android:autoText="false"
         android:editable="false"
         android:ems="6"

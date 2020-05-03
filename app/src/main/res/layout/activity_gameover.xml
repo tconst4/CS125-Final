@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/cs125Logo2"
+        android:id="@+id/cs125Logo"
         android:layout_width="287dp"
         android:layout_height="300dp"
         android:layout_marginStart="60dp"
@@ -52,11 +52,11 @@
 
     <TextView
         android:id="@+id/gameVitoryTop"
-        android:layout_width="315dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="252dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="100dp"
         android:autoText="false"
         android:bufferType="normal"
         android:capitalize="none"
@@ -73,11 +73,11 @@
 
     <TextView
         android:id="@+id/gOverBotGeoff"
-        android:layout_width="344dp"
-        android:layout_height="139dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="468dp"
+        android:layout_width="302dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="460dp"
         android:fontFamily="casual"
         android:lineSpacingExtra="8sp"
         android:text="@string/gameOverBotGeoff"
@@ -118,10 +118,10 @@
 
     <TextView
         android:id="@+id/gOverTopGeoff"
-        android:layout_width="315dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+        android:layout_width="268dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
         android:layout_marginTop="88dp"
         android:autoText="false"
         android:bufferType="normal"
@@ -144,7 +144,8 @@
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
         android:layout_marginBottom="33dp"
-        android:text="Back to Menu"
+        android:text="Back to Start"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

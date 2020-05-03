@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * instance of the battle class for each round, rather than have functions to
  * reset the score values.
  */
-public class Battle extends AppCompatActivity {
+public class Battle  {
     protected int playerScore;
     protected int enemyScore;
 

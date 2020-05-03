@@ -9,6 +9,7 @@ import java.util.Random;
 public class Game {
     private static int lastTell = -1;
     public static int round = 0;
+    public static int gameCount = 0;
     private Battle currentBattle;
     /**
      * When a new game is created there should be a new (first) battle created to go along with it.
@@ -16,6 +17,7 @@ public class Game {
     Game() {
 
         currentBattle = new Battle();
+        gameCount = gameCount + 1;
     }
 
     /**
@@ -28,7 +30,7 @@ public class Game {
      * This will only be used to test if the player gets to proceed to the bonus round by getting a
      * perfect score in all subsequent rounds.
      */
-    private int totalScore = 0;
+    private static int totalScore = 0;
 
     /**
      * When a round ends we set the currentBattle to a new instance of battle. This way the scores
@@ -37,6 +39,7 @@ public class Game {
     public void newBattle() {
         currentBattle = new Battle();
         round++;
+
     }
 
 
@@ -47,8 +50,10 @@ public class Game {
         return round;
     }
 
-    public static void roundReset() {
+    public static void gameReset() {
+
         round = 0;
+        totalScore = 0;
     }
 
     /**
@@ -107,8 +112,7 @@ public class Game {
      * this will end up being 12, which is the score we will check to access the bonus round.
      */
     public void updateTotalScore() {
-        totalScore = totalScore
-                + (currentBattle.getPlayerScore() - currentBattle.getEnemyScore());
+        totalScore += (currentBattle.getPlayerScore() - currentBattle.getEnemyScore());
     }
 
 }

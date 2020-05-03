@@ -110,7 +110,8 @@ public class BattleActivity extends AppCompatActivity {
         startOverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toStart = new Intent(BattleActivity.this, StartScreen.class);
+                Intent toStart = new Intent(BattleActivity.this,
+                        TransitionActivity.class);
                 startActivity(toStart);
             }
         });

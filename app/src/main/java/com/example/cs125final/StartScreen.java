@@ -11,12 +11,14 @@ public class StartScreen extends AppCompatActivity {
 
     private Button startButton;
     private Button quitButton;
+    private Button creditsButton;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.start_screen);
         final Intent startGame = new Intent(StartScreen.this, StoryActivity.class);
+        final Intent toCredits = new Intent(StartScreen.this, Credits.class);
         startButton = (Button) findViewById(R.id.start_button);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,13 @@ public class StartScreen extends AppCompatActivity {
                 gameOver.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 finish();
                 startActivity(gameOver);
+            }
+        });
+        creditsButton = (Button) findViewById(R.id.credits);
+        quitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toCredits);
             }
         });
     }

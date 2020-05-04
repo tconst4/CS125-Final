@@ -23,6 +23,7 @@ public class StartScreen extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(startGame);
                 finish();
+
             }
         });
         quitButton = (Button) findViewById(R.id.quit_button);

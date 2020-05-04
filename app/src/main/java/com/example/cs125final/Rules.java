@@ -20,6 +20,7 @@ public class Rules extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(toGame);
+
             }
         });
     }

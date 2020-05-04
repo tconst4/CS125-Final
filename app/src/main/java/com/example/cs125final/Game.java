@@ -10,6 +10,8 @@ public class Game {
     private static int lastTell = -1;
     public static int round = 0;
     public static int gameCount = 0;
+    public static int playerTotal = 0;
+    public static int enemyTotal = 0;
     private Battle currentBattle;
     /**
      * When a new game is created there should be a new (first) battle created to go along with it.
@@ -42,7 +44,6 @@ public class Game {
 
     }
 
-
     public int getTotalScore() {
         return totalScore;
     }
@@ -51,9 +52,10 @@ public class Game {
     }
 
     public static void gameReset() {
-
         round = 0;
         totalScore = 0;
+        playerTotal = 0;
+        enemyTotal = 0;
     }
 
     /**
@@ -113,6 +115,11 @@ public class Game {
      */
     public void updateTotalScore() {
         totalScore += (currentBattle.getPlayerScore() - currentBattle.getEnemyScore());
+    }
+
+    public void updateScores() {
+        playerTotal += currentBattle.getPlayerScore();
+        enemyTotal += currentBattle.getEnemyScore();
     }
 
 }

@@ -161,6 +161,9 @@ public class BattleActivity extends AppCompatActivity {
             currentGame.setTell();
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     currentGame.getTell()));
+            currentGame.updateScores();
+            System.out.println("Player: " + Game.playerTotal);
+            System.out.println("Enemy: " + Game.enemyTotal);
 
         } else {
             roundOver();

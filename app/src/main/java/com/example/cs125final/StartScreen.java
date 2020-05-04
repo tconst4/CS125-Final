@@ -39,7 +39,7 @@ public class StartScreen extends AppCompatActivity {
             }
         });
         creditsButton = (Button) findViewById(R.id.credits);
-        quitButton.setOnClickListener(new View.OnClickListener() {
+        creditsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(toCredits);

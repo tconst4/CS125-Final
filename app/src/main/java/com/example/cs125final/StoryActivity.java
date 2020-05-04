@@ -22,6 +22,6 @@ public class StoryActivity extends AppCompatActivity {
                 startActivity(toRules);
             }
         });
-
     }
 }
+

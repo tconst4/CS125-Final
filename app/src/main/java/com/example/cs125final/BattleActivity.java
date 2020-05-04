@@ -22,6 +22,8 @@ public class BattleActivity extends AppCompatActivity {
     protected Button debugButton;
     protected Button advanceButton;
     protected Button menuButton;
+    protected Button ruleButton;
+    protected Button closeButton;
     protected Button startOverButton;
     protected MediaPlayer music;
     protected MediaPlayer hit;
@@ -40,6 +42,7 @@ public class BattleActivity extends AppCompatActivity {
     protected TextView roundNum;
     protected TextView winNum;
     protected TextView losNum;
+    protected ImageView rules;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,9 @@ public class BattleActivity extends AppCompatActivity {
 
 
         data = new MoveTitleList();
+        ruleButton = findViewById(R.id.ruleButton);
+        closeButton = findViewById(R.id.closeButton);
+        rules = findViewById(R.id.rules);
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
 
@@ -177,8 +183,39 @@ public class BattleActivity extends AppCompatActivity {
                 startActivity(toStart);
             }
         });
+
+        ruleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rules.setVisibility(View.VISIBLE);
+                ruleButton.setVisibility(View.GONE);
+                debugButton.setClickable(false);
+                codeButton.setClickable(false);
+                refactorButton.setClickable(false);
+                closeButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rules.setVisibility(View.GONE);
+                closeButton.setVisibility(View.GONE);
+                ruleButton.setVisibility(View.VISIBLE);
+                debugButton.setClickable(true);
+                refactorButton.setClickable(true);
+                codeButton.setClickable(true);
+
+            }
+        });
     }
 
+    public void onResume() {
+        super.onResume();
+        System.out.println(currentGame.getCurrentRound());
+        enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
+                currentGame.getTell()));
+    }
     /**
      * Handles all inputs from the 3 player buttons.
      * @param playerInput int, represents the move being input by the player.

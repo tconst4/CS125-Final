@@ -35,6 +35,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
+    protected GifImageView fightback;
     protected TextView moveTitle;
     protected TextView roundNum;
     protected TextView winNum;
@@ -83,6 +84,16 @@ public class BattleActivity extends AppCompatActivity {
                 currentGame.getTell()));
 
         roundNum.setText(data.getNumberString(currentGame.getCurrentRound() + 1));
+        fightback = findViewById(R.id.backdrop);
+
+        switch (currentGame.getCurrentRound()) {
+            case 5:
+                fightback.setImageResource(R.drawable.redbattle);
+                break;
+            default: fightback.setImageResource(R.drawable.battlegif);
+
+        }
+        //fightback.setImageResource(R.drawable.battlegif);
 
         winNum.setText(data.getNumberString(Game.playerTotal));
         losNum.setText(data.getNumberString(Game.enemyTotal));

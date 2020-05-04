@@ -7,6 +7,7 @@ package com.example.cs125final;
  */
 public class MoveTitleList {
     private int[][] moves = new int[6][3];
+    private int[] numbers = new int[16];
 
     MoveTitleList() {
         moves[0][0] = R.string.martinCode;
@@ -27,9 +28,26 @@ public class MoveTitleList {
         moves[5][0] = R.string.geoffCode;
         moves[5][1] = R.string.geoffDebug;
         moves[5][2] = R.string.geoffRefactor;
+        numbers[1] = R.string.one;
+        numbers[2] = R.string.two;
+        numbers[3] = R.string.three;
+        numbers[4] = R.string.four;
+        numbers[5] = R.string.five;
+        numbers[6] = R.string.six;
+        numbers[7] = R.string.seven;
+        numbers[8] = R.string.eight;
+        numbers[9] = R.string.nine;
+        numbers[10] = R.string.ten;
+        numbers[11] = R.string.eleven;
+        numbers[12] = R.string.twelve;
+        numbers[13] = R.string.thirteen;
+        numbers[14] = R.string.fourteen;
+        numbers[15] = R.string.fifteen;
     }
 
     public int getMoveText(int roundNumber, int pose) {
         return moves[roundNumber][pose];
     }
+
+    public int getNumberString(int  number) { return numbers[number]; }
 }

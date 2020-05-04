@@ -126,16 +126,20 @@ public class BattleActivity extends AppCompatActivity {
                 switch(currentGame.getCurrentRound()) {
 
                     case 6:
+                        finish();
                         startActivity(endGame);
                         break;
                     case 5:
                         if (currentGame.getTotalScore() != Constant.PERFECT_SCORE) {
+                            finish();
                             startActivity(endGame);
                         } else if (currentGame.getTotalScore() == Constant.PERFECT_SCORE) {
+                            //finish();
                             startActivity(newChallenger);
                         }
                         break;
-                    default: startActivity(fightTransition);
+                    default: //finish();
+                        startActivity(fightTransition);
                 }
             }
         });
@@ -157,7 +161,8 @@ public class BattleActivity extends AppCompatActivity {
                 currentGame = new Game();
                 Intent toStart = new Intent(BattleActivity.this,
                         TransitionActivity.class);
-                toStart.putExtra("round", 0);
+                //toStart.putExtra("round", 0);
+                //finish();
                 startActivity(toStart);
             }
         });

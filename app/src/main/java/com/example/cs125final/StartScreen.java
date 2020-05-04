@@ -21,8 +21,8 @@ public class StartScreen extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(startGame);
                 //finish();
+                startActivity(startGame);
             }
         });
         quitButton = (Button) findViewById(R.id.quit_button);
@@ -31,6 +31,7 @@ public class StartScreen extends AppCompatActivity {
             public void onClick(View v) {
                 final Intent gameOver = new Intent(StartScreen.this,
                         QuitActivity.class);
+                gameOver.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 finish();
                 startActivity(gameOver);
             }

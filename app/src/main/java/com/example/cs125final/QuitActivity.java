@@ -1,7 +1,6 @@
 package com.example.cs125final;
 
 import android.os.Bundle;
-import android.R.layout;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;

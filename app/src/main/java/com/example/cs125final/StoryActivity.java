@@ -19,6 +19,7 @@ public class StoryActivity extends AppCompatActivity {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(toGame);
             }
         });

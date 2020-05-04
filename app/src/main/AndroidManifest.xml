@@ -17,6 +17,7 @@
         <activity android:name=".QuitActivity" />
         <activity android:name=".BattleActivity" />
         <activity android:name=".StartScreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

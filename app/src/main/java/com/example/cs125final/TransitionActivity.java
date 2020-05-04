@@ -60,6 +60,7 @@ public class TransitionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                //icon.setVisibility(View.INVISIBLE);
+                finish();
                 startActivity(battleActivity);
             }
         });

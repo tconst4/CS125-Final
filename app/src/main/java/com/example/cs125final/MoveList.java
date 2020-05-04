@@ -18,9 +18,9 @@ public class MoveList {
      * I'm using he constructor to populate the array since it should be the same every time.
      */
     MoveList() {
-        moves[0][0] = R.drawable.martin1; /*Code - deb*/
-        moves[0][1] = R.drawable.martin2; /*Debug -- ref*/
-        moves[0][2] = R.drawable.martin3; /*Ref -- code*/
+        moves[0][0] = R.drawable.martin1;
+        moves[0][1] = R.drawable.martin2;
+        moves[0][2] = R.drawable.martin3;
         moves[0][3] = R.drawable.martinvictory;
         moves[0][4] = R.drawable.martindefeat;
         moves[1][0] = R.drawable.david3;
@@ -28,14 +28,14 @@ public class MoveList {
         moves[1][2] = R.drawable.david2;
         moves[1][3] = R.drawable.davidvictory;
         moves[1][4] = R.drawable.daviddefeat;
-        moves[2][0] = R.drawable.lou1;
-        moves[2][1] = R.drawable.lou2;
-        moves[2][2] = R.drawable.lou3;
+        moves[2][0] = R.drawable.lou3;
+        moves[2][1] = R.drawable.lou1;
+        moves[2][2] = R.drawable.lou2;
         moves[2][3] = R.drawable.louvictory;
         moves[2][4] = R.drawable.loudefeat;
-        moves[3][0] = R.drawable.daniel1;
-        moves[3][1] = R.drawable.daniel2;
-        moves[3][2] = R.drawable.daniel3;
+        moves[3][0] = R.drawable.daniel3;
+        moves[3][1] = R.drawable.daniel1;
+        moves[3][2] = R.drawable.daniel2;
         moves[3][3] = R.drawable.danielvictory;
         moves[3][4] = R.drawable.danieldefeat;
         moves[4][0] = R.drawable.ben1;

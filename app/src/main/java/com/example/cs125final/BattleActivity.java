@@ -143,6 +143,7 @@ public class BattleActivity extends AppCompatActivity {
                 debugButton.setClickable(true);
                 refactorButton.setClickable(true);
                 codeButton.setClickable(true);
+
             }
         });
     }

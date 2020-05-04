@@ -6,23 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".Rules">
 
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="154dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="464dp"
+        android:background="@drawable/startbuttonon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="708dp"
         android:layout_height="748dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/lightbackground"
-        tools:layout_editor_absoluteX="-260dp"
-        tools:layout_editor_absoluteY="-9dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lightbackground" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="380dp"
         android:layout_height="517dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/wood"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="26dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wood" />
 
     <TextView
         android:id="@+id/size3"

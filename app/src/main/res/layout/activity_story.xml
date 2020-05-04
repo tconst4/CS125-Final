@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="1033dp"
-        android:layout_height="757dp"
+        android:layout_width="984dp"
+        android:layout_height="736dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hackground" />
@@ -44,13 +44,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/nextButton"
         android:layout_width="154dp"
         android:layout_height="150dp"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="128dp"
-        android:layout_marginTop="428dp"
-        android:background="@drawable/startbuttonon"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

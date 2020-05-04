@@ -14,12 +14,12 @@ public class StoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
-        startGame = findViewById(R.id.button);
-        Intent toGame = new Intent(StoryActivity.this, TransitionActivity.class);
+        startGame = findViewById(R.id.nextButton);
+        Intent toRules = new Intent(StoryActivity.this, Rules.class);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(toGame);
+                startActivity(toRules);
             }
         });
 

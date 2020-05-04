@@ -21,6 +21,8 @@ public class BattleActivity extends AppCompatActivity {
     protected Button debugButton;
     protected Button advanceButton;
     protected Button menuButton;
+    protected Button ruleButton;
+    protected Button closeButton;
     protected Button startOverButton;
     protected MediaPlayer music;
     protected MediaPlayer hit;
@@ -34,6 +36,7 @@ public class BattleActivity extends AppCompatActivity {
     protected View enemyPip3;
     protected ImageView victory;
     protected ImageView defeat;
+    protected ImageView rules;
     protected TextView moveTitle;
 
     @Override
@@ -54,6 +57,9 @@ public class BattleActivity extends AppCompatActivity {
         defeat = findViewById(R.id.defeat);
         moveTitle = findViewById(R.id.moveText);
         data = new MoveTitleList();
+        ruleButton = findViewById(R.id.ruleButton);
+        closeButton = findViewById(R.id.closeButton);
+        rules = findViewById(R.id.rules);
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
         final Intent fightTransition = new Intent(BattleActivity.this,
@@ -113,6 +119,30 @@ public class BattleActivity extends AppCompatActivity {
                 Intent toStart = new Intent(BattleActivity.this,
                         TransitionActivity.class);
                 startActivity(toStart);
+            }
+        });
+
+        ruleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rules.setVisibility(View.VISIBLE);
+                ruleButton.setVisibility(View.GONE);
+                debugButton.setClickable(false);
+                codeButton.setClickable(false);
+                refactorButton.setClickable(false);
+                closeButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rules.setVisibility(View.GONE);
+                closeButton.setVisibility(View.GONE);
+                ruleButton.setVisibility(View.VISIBLE);
+                debugButton.setClickable(true);
+                refactorButton.setClickable(true);
+                codeButton.setClickable(true);
             }
         });
     }

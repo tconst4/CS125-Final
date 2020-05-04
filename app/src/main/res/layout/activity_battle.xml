@@ -219,4 +219,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="119dp"
+        android:layout_height="246dp"
+        app:srcCompat="@drawable/triangle"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="92dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

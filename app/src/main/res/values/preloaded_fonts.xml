@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
         <item>@font/aldrich</item>
+        <item>@font/press_start_2p</item>
         <item>@font/trade_winds</item>
     </array>
 </resources>

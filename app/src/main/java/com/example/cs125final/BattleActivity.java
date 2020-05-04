@@ -36,6 +36,9 @@ public class BattleActivity extends AppCompatActivity {
     protected ImageView victory;
     protected ImageView defeat;
     protected TextView moveTitle;
+    protected TextView roundNum;
+    protected TextView winNum;
+    protected TextView losNum;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,12 @@ public class BattleActivity extends AppCompatActivity {
         victory = findViewById(R.id.victory);
         defeat = findViewById(R.id.defeat);
         moveTitle = findViewById(R.id.moveText);
+        roundNum = findViewById(R.id.roundNumber);
+        winNum = findViewById(R.id.winNumber);
+        losNum  = findViewById(R.id.lossNumber);
+
+
+
         data = new MoveTitleList();
 //        final MediaPlayer hit = MediaPlayer.create(this, R.raw.right);
 //        final MediaPlayer miss = MediaPlayer.create(this, R.raw.wrong);
@@ -72,6 +81,12 @@ public class BattleActivity extends AppCompatActivity {
         currentGame.setTell();
         enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                 currentGame.getTell()));
+
+        roundNum.setText(data.getNumberString(currentGame.getCurrentRound() + 1));
+
+        winNum.setText(data.getNumberString(Game.playerTotal));
+        losNum.setText(data.getNumberString(Game.enemyTotal));
+
 
         startMusic();
         fightTransition.putExtra("round", currentGame.getCurrentRound() + 1);
@@ -138,7 +153,11 @@ public class BattleActivity extends AppCompatActivity {
         startOverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toStart = new Intent(BattleActivity.this, StartScreen.class);
+                Game.gameReset();
+                currentGame = new Game();
+                Intent toStart = new Intent(BattleActivity.this,
+                        TransitionActivity.class);
+                toStart.putExtra("round", 0);
                 startActivity(toStart);
             }
         });
@@ -161,7 +180,6 @@ public class BattleActivity extends AppCompatActivity {
             currentGame.setTell();
             enemyAvatar.setImageResource(moves.getMove(currentGame.getCurrentRound(),
                     currentGame.getTell()));
-            currentGame.updateScores();
             System.out.println("Player: " + Game.playerTotal);
             System.out.println("Enemy: " + Game.enemyTotal);
 
@@ -172,6 +190,8 @@ public class BattleActivity extends AppCompatActivity {
     }
 
     protected void playerPipControl() {
+        Game.playerTotal++;
+        winNum.setText(data.getNumberString(Game.playerTotal));
         if (currentGame.currentPlayerScore() == Constant.FIRST_POINT) {
             teamPip1.setVisibility(View.VISIBLE);
         } else if (currentGame.currentPlayerScore() == Constant.SECOND_POINT) {
@@ -182,6 +202,8 @@ public class BattleActivity extends AppCompatActivity {
     }
 
     protected void enemyPipControl() {
+        Game.enemyTotal++;
+        losNum.setText(data.getNumberString(Game.enemyTotal));
         if (currentGame.currentEnemyScore() == Constant.FIRST_POINT) {
             enemyPip1.setVisibility(View.VISIBLE);
         } else if (currentGame.currentEnemyScore() == Constant.SECOND_POINT) {

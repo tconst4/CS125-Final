@@ -88,9 +88,11 @@ public class Game {
     public boolean checkPlayerInput(int inputValue) {
         if (inputValue == tell) {
             currentBattle.playerSuccess();
+            //playerTotal++;
             return true;
         } else {
             currentBattle.playerFail();
+            //playerTotal++;
             return false;
         }
     }
@@ -117,9 +119,9 @@ public class Game {
         totalScore += (currentBattle.getPlayerScore() - currentBattle.getEnemyScore());
     }
 
-    public void updateScores() {
-        playerTotal += currentBattle.getPlayerScore();
-        enemyTotal += currentBattle.getEnemyScore();
-    }
+//    public void updateScores() {
+//        playerTotal += currentBattle.getPlayerScore();
+//        enemyTotal += currentBattle.getEnemyScore();
+//    }
 
 }
